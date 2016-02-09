@@ -1,0 +1,75 @@
+<strategy id="timeout_response_strategy">
+   <rule id="tor_user_is_bored1" comment="User is bored.. so we trigger the social_bonding_strategy">
+        <precondition>
+        	<equals>
+				<op1 var="userAffect"  domain="dstate"/>
+				<op2 value="bored"/>
+			</equals>
+		</precondition>
+        <action>
+            <gotoStrategy id="social_bonding_strategy"/>
+        </action>
+    </rule>
+    <rule id="tor_user_is_frustrated" comment="User is frustrated.. so we trigger the pedagogical_strategy_for_frustrated">
+        <precondition>
+            <equals>
+				<op1 var="userAffect"  domain="dstate"/>
+				<op2 value="frustrated"/>
+			</equals>
+        </precondition>
+        <action>
+        	<gotoStrategy id="pedagogical_strategy_for_frustrated_timeout"/>
+        </action>
+    </rule>
+    <rule id="tor_user_is_calm_happy_neutral" comment="User is calm or happy or neutral.. so we keep count">
+        <precondition>
+            <and>
+	            <or>
+		            <equals>
+						<op1 var="userAffect"  domain="dstate"/>
+						<op2 value="happy"/>
+					</equals>
+		            <equals>
+						<op1 var="userAffect"  domain="dstate"/>
+						<op2 value="calm"/>
+					</equals>
+					<equals>
+						<op1 var="userAffect"  domain="dstate"/>
+						<op2 value="neutral"/>
+					</equals>
+				</or>
+				<le>
+				    <op1 var="currentStepTimeOutCount"  domain="dstate"/>
+					<op2 value="2" type="number"/>
+				</le>
+			</and>
+        </precondition>
+        <action />
+    </rule>
+    <rule id="tor_user_is_calm_happy_neutral_2" comment="Neutral user.. but two timeouts.. so we trigger pedagogical_strategy_for_other_users">
+        <precondition>
+               <or>
+	            <equals>
+					<op1 var="userAffect"  domain="dstate"/>
+					<op2 value="happy"/>
+				</equals>
+	            <equals>
+					<op1 var="userAffect"  domain="dstate"/>
+					<op2 value="calm"/>
+				</equals>
+				<equals>
+					<op1 var="userAffect"  domain="dstate"/>
+					<op2 value="neutral"/>
+				</equals>
+			</or>
+		</precondition>
+        <action>
+        	<gotoStrategy id="pedagogical_strategy_for_other_users_timeout"/>
+        </action>
+    </rule>
+    <rule id="tor-last" comment="tor-do nothing">
+        <precondition/>
+             <action/>
+    
+    </rule>
+</strategy>

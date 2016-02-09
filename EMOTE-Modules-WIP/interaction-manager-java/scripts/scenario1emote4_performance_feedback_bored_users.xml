@@ -1,0 +1,151 @@
+<strategy id="performance_feedback_bored_users">
+	<rule id="incorrect_tool_bored" comment="when user got the tool wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="toolSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="toolCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_tool_strategy_for_frustrated"/>
+		</action>            
+    </rule>
+     <rule id="incorrect_skills_bored_users" comment="when user got the sym/dir/dis all wrong">
+	 	<precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="symbolSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="symbolCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="distanceSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="distanceCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="directionSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="directionCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <actionOr>
+	        <action p="0.33">
+			    <gotoStrategy id="incorrect_sym_strategy_for_frustrated"/>
+			</action>  
+			<action p="0.33">
+			    <gotoStrategy id="incorrect_dis_strategy_for_frustrated"/>
+			</action> 
+			<action p="0.33">
+			    <gotoStrategy id="incorrect_dir_strategy_for_frustrated"/>
+			</action>
+        </actionOr>
+	</rule>
+	<rule id="incorrect_sym_bored" comment="when user got the sym wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="symbolSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="symbolCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_sym_strategy_for_frustrated"/>
+		</action>            
+    </rule><rule id="incorrect_dir_bored" comment="when user got the dir wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="directionSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="directionCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_dir_strategy_for_frustrated"/>
+		</action>            
+    </rule>
+    <rule id="incorrect_dis_bored" comment="when user got the dis wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="distanceSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="distanceCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_dis_strategy_for_frustrated"/>
+		</action>            
+    </rule>
+
+</strategy>

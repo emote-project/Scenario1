@@ -1,0 +1,766 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ControlTemplate x:Key="CustomDistanceFB" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Feedback/Combi/DistanceWaitOff.png" Height="170" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock FontSize="10" Text="{TemplateBinding Uid}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0,-20,0,0"/>
+            <TextBlock FontSize="12" Text="{TemplateBinding Content}" VerticalAlignment="Center" FontWeight="Bold" Foreground="Yellow" HorizontalAlignment="Center" Margin="0,100,0,0"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceWaitOn.png" />
+            </MultiDataTrigger>
+            
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceWaitOn.png" />
+            </MultiDataTrigger>
+            
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceCorrectOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceWaitOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DistanceWrongOff.png" />
+            </MultiDataTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CustomDirectionFB" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/FeedBack/Combi/DirectionWaitOff.png" Height="170" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock FontSize="10" Text="{TemplateBinding Uid}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0,-20,0,0"/>
+            <TextBlock FontSize="12" Text="{TemplateBinding Content}" VerticalAlignment="Center" FontWeight="Bold" Foreground="Yellow" HorizontalAlignment="Center" Margin="0,100,0,0"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionCorrectOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionWaitOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/DirectionWrongOff.png" />
+            </MultiDataTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="CustomSymbolFB" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/FeedBack/Combi/SymbolWaitOff.png" Height="170" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock FontSize="10" Text="{TemplateBinding Uid}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0,-20,0,0"/>
+            <TextBlock FontSize="12" Text="{TemplateBinding Content}" VerticalAlignment="Center" FontWeight="Bold" Foreground="Yellow" HorizontalAlignment="Center" Margin="0,100,0,0"/>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolWaitOn.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="correct" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolCorrectOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wait" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolWaitOff.png" />
+            </MultiDataTrigger>
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Tag}" Value="wrong" />
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/FeedBack/Combi/SymbolWrongOff.png" />
+            </MultiDataTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="CustomRadioButton" TargetType="RadioButton">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/off.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock FontSize="10" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <!--<Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="chkbox1" />-->
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/on.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/over.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="CustomButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/off.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock FontSize="10" Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <!--<MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/on.png" />
+            </MultiDataTrigger>-->
+
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/over.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="CustomCheckBox" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/off.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <!--<Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="chkbox1" />-->
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/on.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DistanceCheckBox" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Skills/DistanceOff.png" Height="64" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/DistanceOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/DistanceOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SymbolCheckBox" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Skills/SymbolOff.png" Height="64" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <!--<Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="chkbox1" />-->
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/SymbolOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/SymbolOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="DirectionCheckBox" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Skills/DirectionOff.png" Height="64" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <!--<Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="chkbox1" />-->
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/DirectionOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Skills/DirectionOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+    <ControlTemplate x:Key="GlanceCheck" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/GazePointControl/GlanceOff.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                    <!--<Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="chkbox1" />-->
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/GlanceOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/GlanceOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="GazeCheck" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/GazePointControl/GazeOff.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/GazeOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/GazeOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="PointCheck" TargetType="CheckBox">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/GazePointControl/PointOff.png" Height="64" Width="64" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/PointOn.png" />
+            </MultiDataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/GazePointControl/PointOver.png" />
+            </MultiDataTrigger>
+            
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+
+    <ControlTemplate x:Key="SelectButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/SelectOff.png" Height="32" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased" />
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/SelectOn.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="AutoButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/AutoOff.png" Height="32" Width="128" RenderOptions.BitmapScalingMode="NearestNeighbor" RenderOptions.EdgeMode="Aliased"/>
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/AutoOn.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+
+
+    <ControlTemplate x:Key="SmallSkillClearButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/XSmallOff.png" Height="32" Width="32" />
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/XSmallOn.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SmallSkillAllButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/YesSmallOff.png" Height="32" Width="32" />
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/YesSmallOn.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="SmallResetButton" TargetType="Button">
+        <Grid>
+            <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/Reset.png" />
+            <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/ResetOver.png" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="SliderStyle1" TargetType="{x:Type Slider}">
+        <Setter Property="Stylus.IsPressAndHoldEnabled" Value="False"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="Foreground" Value="#FFE5E5E5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Slider}">
+                    <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto" MinHeight="{TemplateBinding MinHeight}"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TickBar x:Name="TopTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,0,0,2" Placement="Top" Grid.Row="0" Visibility="Collapsed"/>
+                            <TickBar x:Name="BottomTick" Fill="{TemplateBinding Foreground}" Height="4" Margin="0,2,0,0" Placement="Bottom" Grid.Row="2" Visibility="Collapsed"/>
+                            <Border x:Name="TrackBackground" BorderBrush="#FFD6D6D6" BorderThickness="1" Background="#FFE7EAEA" Height="4" Margin="5,0" Grid.Row="1" VerticalAlignment="Center">
+                                <Canvas Margin="-6,-1">
+                                    <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Height="4" Visibility="Hidden"/>
+                                </Canvas>
+                            </Border>
+                            <Track x:Name="PART_Track" Grid.Row="1">
+                                <Track.DecreaseRepeatButton>
+                                    <RepeatButton Command="Slider.DecreaseLarge">
+                                        <RepeatButton.Style>
+                                            <Style TargetType="{x:Type RepeatButton}">
+                                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Focusable" Value="False"/>
+                                                <Setter Property="IsTabStop" Value="False"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                            <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </RepeatButton.Style>
+                                    </RepeatButton>
+                                </Track.DecreaseRepeatButton>
+                                <Track.IncreaseRepeatButton>
+                                    <RepeatButton Command="Slider.IncreaseLarge">
+                                        <RepeatButton.Style>
+                                            <Style TargetType="{x:Type RepeatButton}">
+                                                <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                                <Setter Property="Background" Value="Transparent"/>
+                                                <Setter Property="Focusable" Value="False"/>
+                                                <Setter Property="IsTabStop" Value="False"/>
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                            <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </RepeatButton.Style>
+                                    </RepeatButton>
+                                </Track.IncreaseRepeatButton>
+                                <Track.Thumb>
+                                    <Thumb x:Name="Thumb" Focusable="False" Height="18" OverridesDefaultStyle="True" VerticalAlignment="Center" Width="11">
+                                        <Thumb.Template>
+                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                                    <Path x:Name="grip" Data="M0,0C0,0 11,0 11,0 11,0 11,18 11,18 11,18 0,18 0,18 0,18 0,0 0,0z" Fill="#FFF0F0F0" Stretch="Fill" SnapsToDevicePixels="True" Stroke="#FFACACAC" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsDragging" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Thumb.Template>
+                                    </Thumb>
+                                </Track.Thumb>
+                            </Track>
+                        </Grid>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="TickPlacement" Value="TopLeft">
+                            <Setter Property="Visibility" TargetName="TopTick" Value="Visible"/>
+                            <Setter Property="Template" TargetName="Thumb">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Thumb}">
+                                        <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                            <Path x:Name="grip" Data="M0,6C0,6 5.5,0 5.5,0 5.5,0 11,6 11,6 11,6 11,18 11,18 11,18 0,18 0,18 0,18 0,6 0,6z" Fill="#FFF0F0F0" Stretch="Fill" SnapsToDevicePixels="True" Stroke="#FFACACAC" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                            </Trigger>
+                                            <Trigger Property="IsDragging" Value="True">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Margin" TargetName="TrackBackground" Value="5,2,5,0"/>
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="BottomRight">
+                            <Setter Property="Visibility" TargetName="BottomTick" Value="Visible"/>
+                            <Setter Property="Template" TargetName="Thumb">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type Thumb}">
+                                        <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                            <Path x:Name="grip" Data="M0,12C0,12 5.5,18 5.5,18 5.5,18 11,12 11,12 11,12 11,0 11,0 11,0 0,0 0,0 0,0 0,12 0,12z" Fill="#FFF0F0F0" Stretch="Fill" SnapsToDevicePixels="True" Stroke="#FFACACAC" StrokeThickness="1" UseLayoutRounding="True" VerticalAlignment="Center"/>
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                            </Trigger>
+                                            <Trigger Property="IsDragging" Value="True">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                            </Trigger>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Margin" TargetName="TrackBackground" Value="5,0,5,2"/>
+                        </Trigger>
+                        <Trigger Property="TickPlacement" Value="Both">
+                            <Setter Property="Visibility" TargetName="TopTick" Value="Visible"/>
+                            <Setter Property="Visibility" TargetName="BottomTick" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                            <Setter Property="Visibility" TargetName="PART_SelectionRange" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="Foreground" TargetName="Thumb" Value="Blue"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Slider}">
+                            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition MinWidth="{TemplateBinding MinWidth}" Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TickBar x:Name="TopTick" Grid.Column="0" Fill="{TemplateBinding Foreground}" Margin="0,0,2,0" Placement="Left" Visibility="Collapsed" Width="4"/>
+                                    <TickBar x:Name="BottomTick" Grid.Column="2" Fill="{TemplateBinding Foreground}" Margin="2,0,0,0" Placement="Right" Visibility="Collapsed" Width="4"/>
+                                    <Border x:Name="TrackBackground" BorderBrush="#FFD6D6D6" BorderThickness="1" Background="#FFE7EAEA" Grid.Column="1" HorizontalAlignment="Center" Margin="0,5" Width="4">
+                                        <Canvas Margin="-1,-6">
+                                            <Rectangle x:Name="PART_SelectionRange" Fill="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" Visibility="Hidden" Width="4"/>
+                                        </Canvas>
+                                    </Border>
+                                    <Track x:Name="PART_Track" Grid.Column="1">
+                                        <Track.DecreaseRepeatButton>
+                                            <RepeatButton Command="Slider.DecreaseLarge">
+                                                <RepeatButton.Style>
+                                                    <Style TargetType="{x:Type RepeatButton}">
+                                                        <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                                        <Setter Property="Background" Value="Transparent"/>
+                                                        <Setter Property="Focusable" Value="False"/>
+                                                        <Setter Property="IsTabStop" Value="False"/>
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                                    <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </RepeatButton.Style>
+                                            </RepeatButton>
+                                        </Track.DecreaseRepeatButton>
+                                        <Track.IncreaseRepeatButton>
+                                            <RepeatButton Command="Slider.IncreaseLarge">
+                                                <RepeatButton.Style>
+                                                    <Style TargetType="{x:Type RepeatButton}">
+                                                        <Setter Property="OverridesDefaultStyle" Value="True"/>
+                                                        <Setter Property="Background" Value="Transparent"/>
+                                                        <Setter Property="Focusable" Value="False"/>
+                                                        <Setter Property="IsTabStop" Value="False"/>
+                                                        <Setter Property="Template">
+                                                            <Setter.Value>
+                                                                <ControlTemplate TargetType="{x:Type RepeatButton}">
+                                                                    <Rectangle Fill="{TemplateBinding Background}" Height="{TemplateBinding Height}" Width="{TemplateBinding Width}"/>
+                                                                </ControlTemplate>
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </Style>
+                                                </RepeatButton.Style>
+                                            </RepeatButton>
+                                        </Track.IncreaseRepeatButton>
+                                        <Track.Thumb>
+                                            <Thumb x:Name="Thumb" Focusable="False" Height="11" OverridesDefaultStyle="True" VerticalAlignment="Top" Width="18">
+                                                <Thumb.Template>
+                                                    <ControlTemplate TargetType="{x:Type Thumb}">
+                                                        <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                                            <Path x:Name="grip" Data="M0.5,0.5L18.5,0.5 18.5,11.5 0.5,11.5z" Fill="#FFF0F0F0" Stretch="Fill" Stroke="#FFACACAC"/>
+                                                        </Grid>
+                                                        <ControlTemplate.Triggers>
+                                                            <Trigger Property="IsMouseOver" Value="True">
+                                                                <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                                <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsDragging" Value="True">
+                                                                <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                                <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                                            </Trigger>
+                                                            <Trigger Property="IsEnabled" Value="False">
+                                                                <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                                <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                                            </Trigger>
+                                                        </ControlTemplate.Triggers>
+                                                    </ControlTemplate>
+                                                </Thumb.Template>
+                                            </Thumb>
+                                        </Track.Thumb>
+                                    </Track>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="TickPlacement" Value="TopLeft">
+                                    <Setter Property="Visibility" TargetName="TopTick" Value="Visible"/>
+                                    <Setter Property="Template" TargetName="Thumb">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                                    <Path x:Name="grip" Data="M6,11C6,11 0,5.5 0,5.5 0,5.5 6,0 6,0 6,0 18,0 18,0 18,0 18,11 18,11 18,11 6,11 6,11z" Fill="#FFF0F0F0" Stretch="Fill" Stroke="#FFACACAC"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsDragging" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Margin" TargetName="TrackBackground" Value="2,5,0,5"/>
+                                </Trigger>
+                                <Trigger Property="TickPlacement" Value="BottomRight">
+                                    <Setter Property="Visibility" TargetName="BottomTick" Value="Visible"/>
+                                    <Setter Property="Template" TargetName="Thumb">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type Thumb}">
+                                                <Grid HorizontalAlignment="Center" UseLayoutRounding="True" VerticalAlignment="Center">
+                                                    <Path x:Name="grip" Data="M12,11C12,11 18,5.5 18,5.5 18,5.5 12,0 12,0 12,0 0,0 0,0 0,0 0,11 0,11 0,11 12,11 12,11z" Fill="#FFF0F0F0" Stretch="Fill" Stroke="#FFACACAC"/>
+                                                </Grid>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDCECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF7EB4EA"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsDragging" Value="True">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFDAECFC"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FF569DE5"/>
+                                                    </Trigger>
+                                                    <Trigger Property="IsEnabled" Value="False">
+                                                        <Setter Property="Fill" TargetName="grip" Value="#FFF0F0F0"/>
+                                                        <Setter Property="Stroke" TargetName="grip" Value="#FFD9D9D9"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Margin" TargetName="TrackBackground" Value="0,5,2,5"/>
+                                </Trigger>
+                                <Trigger Property="TickPlacement" Value="Both">
+                                    <Setter Property="Visibility" TargetName="TopTick" Value="Visible"/>
+                                    <Setter Property="Visibility" TargetName="BottomTick" Value="Visible"/>
+                                </Trigger>
+                                <Trigger Property="IsSelectionRangeEnabled" Value="True">
+                                    <Setter Property="Visibility" TargetName="PART_SelectionRange" Value="Visible"/>
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter Property="Foreground" TargetName="Thumb" Value="Blue"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

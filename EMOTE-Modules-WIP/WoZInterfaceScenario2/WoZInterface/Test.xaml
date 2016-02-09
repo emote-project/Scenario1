@@ -1,0 +1,12 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Base="clr-namespace:WOZInterface.Perceptions.Base" xmlns:EyeBrows="clr-namespace:WOZInterface.EyeBrows" xmlns:common="clr-namespace:WOZInterface.EyeBrows.common" x:Class="WOZInterface.Test"
+        Title="Test" Height="300" Width="300">
+    <Grid>
+
+        <Slider HorizontalAlignment="Left" Margin="10,130,0,0" VerticalAlignment="Top" Width="211" Value="{Binding OuterBrow, ElementName=eyebrows}"/>
+        <Slider HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top" Width="211" Value="{Binding InnerBrow, ElementName=eyebrows}"/>
+        <common:EyeBrowsBase x:Name="eyebrows" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="LookingLeft.svg"
+   inkscape:export-filename="C:\Users\Eugenio\Documents\EMOTE\EMOTE-MODULES-WIP\WoZInterfaceScenario2\WoZInterface\Images\IconsUser\LookingLeft.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient5199"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop5201" />
+    </linearGradient>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="52.49355"
+     inkscape:cy="41.690241"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1270"
+     inkscape:window-height="820"
+     inkscape:window-x="162"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36217)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.4977355;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 13.864715,985.17766 c -0.41527,2.43662 -0.8696,4.6645 -1.0096,4.95082 -0.23115,0.4727 -0.56947,0.43393 -3.6768601,-0.42129 -1.88226,-0.51804 -3.46372,-0.97359 -3.51435,-1.01233 -0.19373,-0.14822 2.61108,-7.62219 4.30055,-11.45968 0.9726101,-2.20918 2.8034601,-5.83013 4.0685801,-8.04655 10.35625,-18.14365 30.11887,-14.46339 50.44377,-11.16417 36.134085,7.31595 28.78816,25.75531 22.83289,49.92094 -24.37627,24.6677 -58.58868,-7.4457 -73.44498,-22.76774 z"
+       id="path5211"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccscssccc"
+       inkscape:export-filename="C:\Users\Eugenio\Documents\EMOTE\EMOTE-MODULES-WIP\WoZInterfaceScenario2\WoZInterface\Images\IconsUser\LookingRight.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#ffffff;stroke-width:1.08789301;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 59.564255,1029.0365 c -0.15412,-0.1155 -2.76935,0.3598 -5.81163,1.0564 -7.32004,1.6759 -12.27259,2.5082 -15.97392,2.6846 l -3.03571,0.1446 -2.14286,-1.1069 c -6.90608,-7.5012 -12.63114,-10.4423 -16.69456,-19.5233 -11.4447001,-2.7098 -1.95195,-4.2363 -3.74148,-11.8118 0.11349,-2.23436 -0.13606,-7.08212 0.10018,-8.15377 0.31943,-1.44895 0.32702,-2.10556 0.0296,-2.56128 0.31864,-3.30196 5.03919,-9.71953 9.08338,-9.83496 15.14883,-0.63006 26.94072,4.07165 37.94674,9.86195 0.0642,0.041 1.0915,2.9177 2.28289,6.39273 1.19139,3.47503 2.34422,6.45333 2.56184,6.61833 0.21763,0.165 1.35356,0.4736 2.5243,0.6857 4.60431,0.8341 5.37984,0.4577 5.0901,-2.4707 -0.5024,-5.07773 0.54303,-13.62246 1.84157,-15.0519 0.81854,-0.90106 5.49854,-0.75269 9.06384,0.28733 1.03675,0.30243 1.33678,0.54525 1.49238,1.20781 0.20006,0.85187 0.71436,4.92988 1.09513,8.6835 -3.19121,19.11066 -4.73764,9.45096 10.40807,48.12666 0.15759,0.4953 -0.15722,0.5168 -15.66917,1.072 -8.70649,0.3116 -16.71804,0.6288 -17.80346,0.7048 l -1.97347,0.1383 c 2.01942,-9.3938 1.83462,-8.5141 -0.67376,-17.1501 z"
+       id="path5209"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cssccccscccsssssssccsscc"
+       inkscape:export-filename="C:\Users\Eugenio\Documents\EMOTE\EMOTE-MODULES-WIP\WoZInterfaceScenario2\WoZInterface\Images\IconsUser\LookingRight.png"
+       inkscape:export-xdpi="90"
+       inkscape:export-ydpi="90" />
+  </g>
+</svg>

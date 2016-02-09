@@ -1,0 +1,225 @@
+﻿<UserControl x:Class="WOZInterface.GazeControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="300">
+
+
+    <UserControl.Resources>
+
+        <Image Source="pack://application:,,,/Images/GazePointControl/GlanceAOn.png" x:Key="GlanceAOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GlanceAOff.png" x:Key="GlanceAOff"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GlanceBOn.png" x:Key="GlanceBOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GlanceBOff.png" x:Key="GlanceBOff"/>
+
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeAOn.png" x:Key="GazeAOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeAOff.png" x:Key="GazeAOff"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeBOn.png" x:Key="GazeBOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeBOff.png" x:Key="GazeBOff"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeCOn.png" x:Key="GazeCOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeCOff.png" x:Key="GazeCOff"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeDOn.png" x:Key="GazeDOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/GazeDOff.png" x:Key="GazeDOff"/>
+
+        <Image Source="pack://application:,,,/Images/GazePointControl/PointAOn.png" x:Key="PointAOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/PointAOff.png" x:Key="PointAOff"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/PointBOn.png" x:Key="PointBOn"/>
+        <Image Source="pack://application:,,,/Images/GazePointControl/PointBOff.png" x:Key="PointBOff"/>
+ 
+
+        <ControlTemplate x:Key="GlanceRadioButton" TargetType="RadioButton">
+            <Grid>
+                <Image Width="160" Height="150" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <ContentPresenter/>
+            </Grid>
+
+            <!-- Excellent Feedback -->
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GlanceARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GlanceAOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GlanceARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GlanceAOff}"/>
+                </MultiDataTrigger>
+
+                <!-- Good Feedback -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GlanceBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GlanceBOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GlanceBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GlanceBOff}"/>
+                </MultiDataTrigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="GazeRadioButton" TargetType="RadioButton">
+            <Grid>
+                <Image Width="160" Height="150" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <ContentPresenter/>
+            </Grid>
+
+            <!-- GazeA -->
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeAOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeAOff}"/>
+                </MultiDataTrigger>
+
+                <!-- GazeB -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeBOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeBOff}"/>
+                </MultiDataTrigger>
+
+                <!-- GazeC -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeCRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeCOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeCRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeCOff}"/>
+                </MultiDataTrigger>
+
+                <!-- GazeD -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeDRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeDOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GazeDRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GazeDOff}"/>
+                </MultiDataTrigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="PointRadioButton" TargetType="RadioButton">
+            <Grid>
+                <Image Width="85" Height="85" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <ContentPresenter/>
+            </Grid>
+
+            <!-- PointA -->
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="PointARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource PointAOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="PointARB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource PointAOff}"/>
+                </MultiDataTrigger>
+
+                <!-- PointB -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="PointBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource PointBOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="PointBRB" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource PointBOff}"/>
+                </MultiDataTrigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+
+
+    <Grid Margin="0,0,0,10">
+        <Grid x:Name="Glance" Margin="0,0,0,21">
+            <RadioButton Name="GlanceARB" IsChecked="True"  Click="UpdateGlance" HorizontalAlignment="Center" Template="{StaticResource GlanceRadioButton}" Width="100" Margin="0,0,200,245"/>
+            <RadioButton Name="GlanceBRB" IsChecked="False" Click="UpdateGlance" HorizontalAlignment="Center" Template="{StaticResource GlanceRadioButton}" Width="100" Margin="200,0,0,245"/>
+        </Grid>
+        <Grid x:Name="Gaze" Margin="0,0,0,53">
+            <RadioButton Name="GazeARB" IsChecked="True"  Click="UpdateGaze" HorizontalAlignment="Center" Template="{StaticResource GazeRadioButton}" Width="100" Margin="49,48,151,153"/>
+            <RadioButton Name="GazeBRB" IsChecked="False" Click="UpdateGaze" HorizontalAlignment="Center" Template="{StaticResource GazeRadioButton}" Width="100" Margin="149,48,51,153"/>
+            <RadioButton Name="GazeCRB" IsChecked="False" Click="UpdateGaze" HorizontalAlignment="Center" Template="{StaticResource GazeRadioButton}" Width="100" Margin="49,144,151,57"/>
+            <RadioButton Name="GazeDRB" IsChecked="False" Click="UpdateGaze" HorizontalAlignment="Center" Template="{StaticResource GazeRadioButton}" Width="100" Margin="149,144,51,57"/>
+        </Grid>
+        <Grid x:Name="Point" Margin="0,0,0,53">
+            <RadioButton Name="PointARB" IsChecked="True"  Click="UpdatePoint" HorizontalAlignment="Center" Template="{StaticResource PointRadioButton}" Height="85" Width="30" Margin="106,102,164,110"/>
+            <RadioButton Name="PointBRB" IsChecked="False" Click="UpdatePoint" HorizontalAlignment="Center" Template="{StaticResource PointRadioButton}" Height="85" Width="30" Margin="159,102,111,110"/>
+        </Grid>
+
+
+        <Grid Margin="0,233,0,21">
+            <CheckBox Name="OverideGlanceCK" IsChecked="False" Click="OverideGlance" HorizontalAlignment="Center" Template="{StaticResource GlanceCheck}" Width="76" Margin="0,0,224,0"></CheckBox>
+            <CheckBox Name="OverideGazeCK" IsChecked="False" Click="OverideGaze" HorizontalAlignment="Center" Template="{StaticResource GazeCheck}" Width="76" Margin="116,0,108,0"></CheckBox>
+            <CheckBox Name="OveridePointCK" IsChecked="False" Click="OveridePoint" HorizontalAlignment="Center" Template="{StaticResource PointCheck}" Width="76" Margin="224,0,0,0"></CheckBox>
+
+        </Grid>
+    </Grid>
+</UserControl>

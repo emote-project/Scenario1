@@ -1,0 +1,15 @@
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\SshShellControl.dll
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\SshShellControl.pdb
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\SshShell.exe
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\Renci.SshNet.dll
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\SshShell.pdb
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\bin\Debug\Renci.SshNet.xml
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.csprojResolveAssemblyReference.cache
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.baml
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.g.cs
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl_MarkupCompile.cache
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.g.resources
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.Properties.Resources.resources
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.csproj.GenerateResource.Cache
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.dll
+D:\EMOTE-Modules-WIP\SshUserControl\SshShellControl\obj\Debug\SshShellControl.pdb

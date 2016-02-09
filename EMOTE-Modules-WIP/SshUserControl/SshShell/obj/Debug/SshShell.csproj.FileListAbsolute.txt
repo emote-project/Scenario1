@@ -1,0 +1,9 @@
+D:\EMOTE-Modules-WIP\SshUserControl\Sshtest\bin\Debug\SshShell.exe.config
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\bin\Debug\SshShell.exe.config
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\bin\Debug\SshShell.exe
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\bin\Debug\SshShell.pdb
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\bin\Debug\Renci.SshNet.dll
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\bin\Debug\Renci.SshNet.xml
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\obj\Debug\SshShell.csprojResolveAssemblyReference.cache
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\obj\Debug\SshShell.exe
+D:\EMOTE-Modules-WIP\SshUserControl\SshShell\obj\Debug\SshShell.pdb

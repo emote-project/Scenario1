@@ -1,0 +1,706 @@
+<dialogueScript>
+    <!--  <dialoguePolicy/> -->
+	<dialogueState>
+		<var name="fromModule" type="symbolic" range="user,gameAI,enercities,skene,affect,tts,null"/>
+		<var name="userCommunicativeFunction" type="symbolic" />
+		<var name="systemCommunicativeFunction" type="symbolic" />
+		<var name="currentStepTimeOut" type="number" value="-1"/>
+		<var name="userResponseTimedOut" type="boolean" />
+		<var name="gameActionExecuted" type="boolean" />
+		<var name="pedagogicalMove" type="boolean" />
+		<var name="userGameAction" type="string" value="null"/>
+		
+		<var name="nextBestGameAction" type="string" value="null"/>
+		<var name="gameStructure" type="string" value="null"/>
+		<var name="gamePositionX" type="string" value="null"/>
+		<var name="gamePositionY" type="string" value="null"/>
+		
+		<var name="gameTurnHolder" type="string" value="system"/>
+		<var name="readyToPassTurn" type="boolean" value="false"/>
+		<var name="waitingForUserGameMove" type="boolean" value="false"/>
+		
+		<var name="userAffect" type="symbolic" range="sad,happy,neutral,null"/>
+		<var name="affectConfidence" type="number" value="0"/>
+		<var name="currentUtterance" type="string" value="null"/>
+		<var name="utteranceStatus" type="symbolic" value="delivered" range="playing,delivered"/>
+	</dialogueState>
+	<input>
+	    <var name="fromModule" type="symbolic" />
+	</input>
+	<input module="hub">
+	    <var name="time-out" type="boolean" />
+	</input>
+	<input module="affect">
+	    <var name="affect" type="string" />
+	    <var name="confidence" type="number" />
+	</input>
+	<input module="tts">
+	    <var name="utteranceStatus" type="symbolic" range="playing,delivered"/>
+	</input>
+	<input module="user">
+	    <var name="communicativeFunction" type="symbolic" />
+	</input>
+	<input module="gameAI">
+	    <var name="nextBestGameAction" type="string" />
+	    <var name="gameStructure" type="string" />
+	    <var name="gamePositionX" type="string" />
+	    <var name="gamePositionY" type="string" />
+	</input>
+	<input module="enercities">
+	    <var name="gameActionExecuted" type="boolean" />
+	    <var name="userGameAction" type="string" />
+	    <var name="gameStructure" type="string" />
+	    
+	</input>
+	<output>
+	</output>
+	<metric>
+	    <var name="turns" type="number" value="0" />
+	</metric>
+	<!-- STATE UPDATE RULES -->
+	
+	<stateUpdateRules>
+		<rule comment="copy input from hub">
+			<precondition>
+				<equals>
+				    <op1 var="fromModule" domain="input"/>
+				    <op2 value="hub" />
+				</equals>    
+			</precondition>
+			<action>
+			    <assign>
+					<assignee var="fromModule" domain="dstate" />
+					<assigner var="fromModule" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="userResponseTimedOut" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="copy input from affect">
+			<precondition>
+				<equals>
+				    <op1 var="fromModule" domain="input"/>
+				    <op2 value="affect" />
+				</equals>    
+			</precondition>
+			<action>
+			    <assign>
+					<assignee var="fromModule" domain="dstate" />
+					<assigner var="fromModule" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="userAffect" domain="dstate" />
+					<assigner var="affect" domain="input"/>
+				</assign>
+				<assign>
+					<assignee var="affectConfidence" domain="dstate" />
+					<assigner var="confidence" domain="input"/>
+				</assign>
+			</action>
+		</rule>
+		<rule comment="copy input from tts module">
+			<precondition>
+				<equals>
+				    <op1 var="fromModule" domain="input"/>
+				    <op2 value="tts" />
+				</equals>    
+			</precondition>
+			<action>
+			    <assign>
+					<assignee var="fromModule" domain="dstate" />
+					<assigner var="fromModule" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="fromModule" domain="input" />
+					<assigner value="null"/>
+				</assign>
+				<assign>
+					<assignee var="utteranceStatus" domain="dstate" />
+					<assigner var="utteranceStatus" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="utteranceStatus" domain="input" />
+					<assigner value="null"/>
+				</assign>
+			</action>
+		</rule>
+		<rule comment="copying input from enercities - when user plays a game move">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="fromModule" domain="input"/>
+					    <op2 value="enercities" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+					<assignee var="gameActionExecuted" domain="dstate" />
+					<assigner var="gameActionExecuted" domain="input" />
+				</assign>
+	            <assign>
+					<assignee var="fromModule" domain="dstate" />
+					<assigner var="fromModule" domain="input" />
+				</assign>
+	            <assign>
+					<assignee var="gameAction" domain="dstate" />
+					<assigner var="gameAction" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="gameStructure" domain="dstate" />
+					<assigner var="gameStructure" domain="input" />
+				</assign>
+				<assign>
+	                <assignee var="waitingForUserGameMove" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+			</action>
+	    </rule>
+	    <rule comment="copying input from gameAI">
+	        <precondition>
+	            <and>
+		           <equals>
+					    <op1 var="fromModule" domain="input"/>
+					    <op2 value="gameAI" />
+					</equals> 
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+					<assignee var="fromModule" domain="dstate" />
+					<assigner var="fromModule" domain="input" />
+				</assign>
+	            <assign>
+					<assignee var="nextBestGameAction" domain="dstate" />
+					<assigner var="nextBestGameAction" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="gameStructure" domain="dstate" />
+					<assigner var="gameStructure" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="gamePositionX" domain="dstate" />
+					<assigner var="gamePositionX" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="gamePositionY" domain="dstate" />
+					<assigner var="gamePositionY" domain="input" />
+				</assign>
+	        </action>
+	    </rule>
+	    
+	    <rule comment="If eco has made his move, pass the turn to the next player:system">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="Economist" />
+					</equals>
+					<equals>
+					    <op1 var="pedagogicalMove" domain="dstate"/>
+					    <op2 value="true" />
+					</equals>
+					
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="dstate"/>
+					<assigner value="system"/>
+	            </assign>
+	            <assign>
+	                <assignee var="nextBestGameAction" domain="dstate"/>
+					<assigner value="null"/>
+	            </assign>
+	            <assign>
+	                <assignee var="gameActionExecuted" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	        </action>
+	     </rule>
+	</stateUpdateRules>
+	
+	<!-- ACTION SELECTION RULES -->
+	<actionSelectionRules>
+	    <strategy id="main">
+	     <rule id="respond_to_tts" comment="TTS module informs the utteranceStatus to IM..IM responds with nothing!">
+	        <precondition>
+	            <equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</equals>
+	        </precondition>
+	        <action/>
+	    </rule>
+	    <rule id="rule_zero" comment="At the start, pass the turn to the next player:env">
+	        <precondition>
+	            <and>
+		           <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="null" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="informTurnChange" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner value="Environmentalist" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="dstate"/>
+					<assigner value="Environmentalist"/>
+	            </assign>
+	            <assign>
+	                <assignee var="gameActionExecuted" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="waitingForUserGameMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            
+	        </action>
+	    </rule>
+	    <rule id="rule_one" comment="Get next best move from game AI">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="system" />
+					</equals>
+					<equals>
+					    <op1 var="nextBestGameAction" domain="dstate"/>
+					    <op2 value="null" />
+					</equals>
+					<equals>
+					    <op1 var="gameActionExecuted" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+					<equals>
+					    <op1 var="readyToPassTurn" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="gameAI" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	             <assign>
+	                <assignee var="strategy" domain="output"/>
+					<assigner value="Global" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="getNextMove" />
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="false" />
+	            </assign>
+	            
+	        </action>
+	    </rule>
+	    <rule id="rule_two" comment="If you have the nextBestGameAction, play it">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="system" />
+					</equals>
+					<not-equals>
+					    <op1 var="nextBestGameAction" domain="dstate"/>
+					    <op2 value="null" />
+					</not-equals>
+					<equals>
+					    <op1 var="gameActionExecuted" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="executeGameAction" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameAction" domain="output"/>
+					<assigner var="nextBestGameAction" domain="dstate"/>
+	            </assign>
+	            <assign>
+	                <assignee var="gameStructure" domain="output"/>
+					<assigner var="gameStructure" domain="dstate"/>
+	            </assign>
+	            <assign>
+					<assignee var="gamePositionX" domain="output" />
+					<assigner var="gamePositionX" domain="dstate" />
+				</assign>
+				<assign>
+					<assignee var="gamePositionY" domain="output" />
+					<assigner var="gamePositionY" domain="dstate" />
+				</assign>
+				<assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	        </action>
+	    </rule>
+	    <rule id="rule_three" comment="If you have made your move, explain it">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="system" />
+					</equals>
+					<not-equals>
+					    <op1 var="nextBestGameAction" domain="dstate"/>
+					    <op2 value="null" />
+					</not-equals>
+					<equals>
+					    <op1 var="gameActionExecuted" domain="dstate"/>
+					    <op2 value="true" />
+					</equals>
+					<equals>
+					    <op1 var="utteranceStatus" domain="dstate"/>
+					    <op2 value="delivered" />
+					</equals>
+					<equals>
+					    <op1 var="pedagogicalMove" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner var="gameTurnHolder" domain="dstate" />
+	            </assign>
+	            
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="explainGameAction" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameAction" domain="output"/>
+					<assigner var="nextBestGameAction" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameStructure" domain="output"/>
+					<assigner var="gameStructure" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameActionExecuted" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	             <assign>
+	                <assignee var="nextBestGameAction" domain="dstate"/>
+					<assigner value="null"/>
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+	    </rule>
+	    <rule id="rule_four" comment="If you have made your move and explained it, pass the turn to the next player:env">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="utteranceStatus" domain="dstate"/>
+					    <op2 value="delivered" />
+					</equals>
+					<equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="system" />
+					</equals>
+					<equals>
+					    <op1 var="readyToPassTurn" domain="dstate"/>
+					    <op2 value="true" />
+					</equals>
+					
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="informTurnChange" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner value="Environmentalist" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="dstate"/>
+					<assigner value="Environmentalist"/>
+	            </assign>
+	            <assign>
+	                <assignee var="gameActionExecuted" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="waitingForUserGameMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            
+	        </action>
+	    </rule>
+	    <rule id="rule_five" comment="If env has made his move, explain it">
+	        <precondition>
+	            <and>
+	               <equals>
+					    <op1 var="waitingForUserGameMove" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="Environmentalist" />
+					</equals>
+					<equals>
+					    <op1 var="pedagogicalMove" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+				</and>
+	        </precondition>
+	       	<action>
+	       	    <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="explainGameAction" />
+	            </assign>
+	             <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner var="gameTurnHolder" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameAction" domain="output"/>
+					<assigner var="userGameAction" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameStructure" domain="output"/>
+					<assigner var="gameStructure" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	       	</action>
+	    </rule>
+	    <rule id="rule_six" comment="If env has made his move, pass the turn to the next player:eco">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="Environmentalist" />
+					</equals>
+					<equals>
+					    <op1 var="pedagogicalMove" domain="dstate"/>
+					    <op2 value="true" />
+					</equals>
+					<equals>
+					    <op1 var="utteranceStatus" domain="dstate"/>
+					    <op2 value="delivered" />
+					</equals>
+					<equals>
+					    <op1 var="readyToPassTurn" domain="dstate"/>
+					    <op2 value="true" />
+					</equals>
+				</and>
+	        </precondition>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	           <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="informTurnChange" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner value="Economist" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameTurnHolder" domain="dstate"/>
+					<assigner value="Economist"/>
+	            </assign>
+	            <assign>
+	                <assignee var="gameActionExecuted" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="false"/>
+	            </assign>
+	            <assign>
+	                <assignee var="waitingForUserGameMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+	    </rule>
+	    <rule id="rule_seven" comment="If eco has made his move, explain it">
+	        <precondition>
+	            <and>
+		            <equals>
+					    <op1 var="gameTurnHolder" domain="dstate"/>
+					    <op2 value="Economist" />
+					</equals>
+					<equals>
+					    <op1 var="pedagogicalMove" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+					<equals>
+					    <op1 var="waitingForUserGameMove" domain="dstate"/>
+					    <op2 value="false" />
+					</equals>
+					
+				</and>
+	        </precondition>
+	       	<action>
+	       	    <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="skene" />
+	            </assign>
+	            <assign>
+	                <assignee var="fromModule" domain="output"/>
+					<assigner value="system" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="explainGameAction" />
+	            </assign>
+	            <assign>
+	                <assignee var="gameAction" domain="output"/>
+					<assigner var="userGameAction" domain="dstate" />
+	            </assign>
+	             <assign>
+	                <assignee var="gameStructure" domain="output"/>
+					<assigner var="gameStructure" domain="dstate" />
+	            </assign>
+	             <assign>
+	                <assignee var="gameTurnHolder" domain="output"/>
+					<assigner var="gameTurnHolder" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="pedagogicalMove" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus" domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="readyToPassTurn" domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	       	</action>
+	    </rule>
+	   
+		</strategy>
+	</actionSelectionRules>
+</dialogueScript>

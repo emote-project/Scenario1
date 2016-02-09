@@ -1,0 +1,364 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53885208-0F26-49AD-A886-605822F4ABD5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WOZInterface</RootNamespace>
+    <AssemblyName>WOZInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EmoteEvents">
+      <HintPath>..\..\EmoteEvents\bin\Release\EmoteEvents.dll</HintPath>
+    </Reference>
+    <Reference Include="GBML">
+      <HintPath>..\..\..\thalamus\GBML\bin\x64\Release\GBML.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Encoder, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="Thalamus">
+      <HintPath>..\..\..\Thalamus\Binaries\Release\Thalamus.dll</HintPath>
+    </Reference>
+    <Reference Include="WebcamControl, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\WebcamControl.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control-Panel\ControlPanel.xaml.cs">
+      <DependentUpon>ControlPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gaze-Point\GazeControl.xaml.cs">
+      <DependentUpon>GazeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logging\LoggingManager.cs" />
+    <Compile Include="Selector.cs" />
+    <Compile Include="Tools-Control\ToolsControl.xaml.cs">
+      <DependentUpon>ToolsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utterance-Control\UtteranceControl.xaml.cs">
+      <DependentUpon>UtteranceControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WOZManager.cs" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Cameras\CameraView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Competence\Competence.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control-Panel\ControlPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gaze-Point\GazeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="Cameras\CameraManager.cs" />
+    <Compile Include="Cameras\CameraView.xaml.cs">
+      <DependentUpon>CameraView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Competence\Competence.xaml.cs">
+      <DependentUpon>Competence.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TaskScript\TaskScriptViewer.xaml.cs">
+      <DependentUpon>TaskScriptViewer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Cameras\SettingsView.xaml.cs">
+      <DependentUpon>SettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TaskScript\TaskScriptManager.cs" />
+    <Compile Include="WOZInterface.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="TaskScript\TaskScriptViewer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Cameras\SettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Tools-Control\ToolsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Utterance-Control\UtteranceControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Feedback\AlmostOff.png" />
+    <Resource Include="Images\Feedback\AlmostOn.png" />
+    <Resource Include="Images\Feedback\AlmostOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Feedback\CorrectResponse.png" />
+    <Resource Include="Images\Feedback\ExcellentOff.png" />
+    <Resource Include="Images\Feedback\ExcellentOn.png" />
+    <Resource Include="Images\Feedback\ExcellentOver.png" />
+    <Resource Include="Images\Feedback\GoodOff.png" />
+    <Resource Include="Images\Feedback\GoodOn.png" />
+    <Resource Include="Images\Feedback\GoodOver.png" />
+    <Resource Include="Images\Feedback\IncorrectResponse.png" />
+    <Resource Include="Images\Feedback\NegativeOff.png" />
+    <Resource Include="Images\Feedback\NegativeOn.png" />
+    <Resource Include="Images\Feedback\NegativeOver.png" />
+    <Resource Include="Images\Feedback\NeutralOff.png" />
+    <Resource Include="Images\Feedback\NeutralOn.png" />
+    <Resource Include="Images\Feedback\NeutralOver.png" />
+    <Resource Include="Images\Feedback\WaitingResponse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Feedback\Combi\DirectionCorrectOff.png" />
+    <Resource Include="Images\Feedback\Combi\DirectionCorrectOn.png" />
+    <Resource Include="Images\Feedback\Combi\DirectionWaitOff.png" />
+    <Resource Include="Images\Feedback\Combi\DirectionWaitOn.png" />
+    <Resource Include="Images\Feedback\Combi\DirectionWrongOff.png" />
+    <Resource Include="Images\Feedback\Combi\DirectionWrongOn.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceCorrectOff.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceCorrectOn.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceWaitOff.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceWaitOn.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceWrongOff.png" />
+    <Resource Include="Images\Feedback\Combi\DistanceWrongOn.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolCorrectOff.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolCorrectOn.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolWaitOff.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolWaitOn.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolWrongOff.png" />
+    <Resource Include="Images\Feedback\Combi\SymbolWrongOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\GazePointControl\GazeAOff.png" />
+    <Resource Include="Images\GazePointControl\GazeAOn.png" />
+    <Resource Include="Images\GazePointControl\GazeBOff.png" />
+    <Resource Include="Images\GazePointControl\GazeBOn.png" />
+    <Resource Include="Images\GazePointControl\GazeCOff.png" />
+    <Resource Include="Images\GazePointControl\GazeCOn.png" />
+    <Resource Include="Images\GazePointControl\GazeDOff.png" />
+    <Resource Include="Images\GazePointControl\GazeDOn.png" />
+    <Resource Include="Images\GazePointControl\GazeOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\GazePointControl\GazeOn.png" />
+    <Resource Include="Images\GazePointControl\GazeOver.png" />
+    <Resource Include="Images\GazePointControl\GlanceAOff.png" />
+    <Resource Include="Images\GazePointControl\GlanceAOn.png" />
+    <Resource Include="Images\GazePointControl\GlanceBOff.png" />
+    <Resource Include="Images\GazePointControl\GlanceBOn.png" />
+    <Resource Include="Images\GazePointControl\GlanceOff.png" />
+    <Resource Include="Images\GazePointControl\GlanceOn.png" />
+    <Resource Include="Images\GazePointControl\GlanceOver.png" />
+    <Resource Include="Images\GazePointControl\PointAOff.png" />
+    <Resource Include="Images\GazePointControl\PointAOn.png" />
+    <Resource Include="Images\GazePointControl\PointBOff.png" />
+    <Resource Include="Images\GazePointControl\PointBOn.png" />
+    <Resource Include="Images\GazePointControl\PointOff.png" />
+    <Resource Include="Images\GazePointControl\PointOn.png" />
+    <Resource Include="Images\GazePointControl\PointOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Generic\AutoOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\AutoOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\nextPressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\nextUnpressed.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\off.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\on.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\over.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\SelectOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\SelectOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\XSmallOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\XSmallOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\YesOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\YesOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\YesSmallOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\Generic\YesSmallOn.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Skills\DirectionOff.png" />
+    <Resource Include="Images\Skills\DirectionOn.png" />
+    <Resource Include="Images\Skills\DirectionOver.png" />
+    <Resource Include="Images\Skills\DistanceOff.png" />
+    <Resource Include="Images\Skills\DistanceOn.png" />
+    <Resource Include="Images\Skills\DistanceOver.png" />
+    <Resource Include="Images\Skills\SymbolOff.png" />
+    <Resource Include="Images\Skills\SymbolOn.png" />
+    <Resource Include="Images\Skills\SymbolOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Generic\Reset.png" />
+    <Resource Include="Images\Generic\ResetOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Generic\RunningOff.png" />
+    <Resource Include="Images\Generic\RunningOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Generic\ArrowGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

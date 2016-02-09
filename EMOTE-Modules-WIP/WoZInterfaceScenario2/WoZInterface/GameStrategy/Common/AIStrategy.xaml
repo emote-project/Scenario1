@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="WOZInterface.GameStrategy.Common.AIStrategy"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Style="{StaticResource UserControlStyle}" Width="176" Height="231">
+
+
+    <Grid >
+        <Image Source="pack://application:,,,/WOZInterface;component/images/Enercities/EconomyScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,16,0,0" />
+        <Slider x:Name="sldEconomy" Margin="35,10,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" Value="1" ValueChanged="StrategyUpdatedByUser" />
+        <TextBlock Margin="0,16,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldEconomy,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/EnvironmentScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,45,0,0" />
+        <Slider x:Name="sldEnvironment" Margin="35,39,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,45,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldEnvironment,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/WellbeingScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,74,0,0" />
+        <Slider x:Name="sldWellbeing" Margin="35,68,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,74,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldWellbeing,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/Money.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,103,0,0" />
+        <Slider x:Name="sldMoney" Margin="35,97,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,103,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldMoney,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/EnergyProduction.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,133,0,0" />
+        <Slider x:Name="sldPower" Margin="35,127,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,133,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldPower,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/Oil.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,162,0,0" />
+        <Slider x:Name="sldOil" Margin="35,156,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,162,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldOil,Path=Value,StringFormat=0.00}"></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/Homes.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,191,0,0" />
+        <Slider x:Name="sldHouses" Margin="35,185,50,0" VerticalAlignment="Top" TickPlacement="Both" Maximum="1" Minimum="-1" ValueChanged="StrategyUpdatedByUser"/>
+        <TextBlock Margin="0,191,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Right" HorizontalAlignment="Right" Width="35" Text="{Binding ElementName=sldHouses,Path=Value,StringFormat=0.00}"></TextBlock>
+
+    </Grid>
+</UserControl>

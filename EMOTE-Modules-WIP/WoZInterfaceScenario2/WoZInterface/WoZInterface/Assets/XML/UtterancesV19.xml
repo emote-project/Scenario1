@@ -1,0 +1,2260 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<data-set xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Is there a &lt;ANIMATE(pointToOther)&gt; tool that you can use &lt;GLANCE(distance_button)&gt; to measure the distance? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How many meters &lt;ANIMATE(metaphoricDichotomicLeft)&gt; are there in 1 km? &lt;ANIMATE(metaphoricDichotomicLeft)&gt;</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How can &lt;ANIMATE(pointToOther)&gt; you convert kilometers into meters? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So, if there is 1000 meters &lt;ANIMATE(metaphoricDichotomicLeft)&gt; in 1 km, how many meters are there in /distance/?  &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCEANDWAVE(compass_button)&gt; Is there a tool that you can use to figure out the direction? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Which way is /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; So which direction could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Which of those letters &lt;GLANCEANDWAVE(compass_button)&gt; on the compass could symbolize /direction/? &lt;GLANCE(compass_button)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Do you know which &lt;GLANCE(compass_tool)&gt; letters on the compass could symbolise /direction/?</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Which of those &lt;GLANCE(compass_tool)&gt; letters on the compass could symbolize /direction/? &lt;GLANCE(compass_tool)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; What could a /symbol/ look like on a map?</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZEANDWAVE(tools)&gt; Is there a tool that you can use to figure this out? &lt;GLANCE(student)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDHIGHLIGHT(tools)&gt; Which tool could tell you &lt;GLANCE(student)&gt; the symbol? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Could you figure this out without using the map key? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDWAVEANDHIGHLIGHT(tools)&gt; Are there any tools that you can use to figure this out? &lt;GLANCE(student)&gt; &lt;ANIMATE(metaphoricRevelation)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(tools)&gt; How can you figure out where /distance/ /direction/ is? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; So, how can you know &lt;GLANCE(tools)&gt; where /distance/ /direction/ is? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; So, how can you discover &lt;GLANCE(tools)&gt; where /distance/ /direction/ is? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; /distance/ /direction/. Where could this location be? &lt;GLANCE(throughMap)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; Which direction &lt;GLANCE(compass_button)&gt; is /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So, where is &lt;GLANCE(compass_tool)&gt; /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Now, where &lt;GLANCE(compass_tools)&gt; can /direction/ be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How should we understand the  &lt;GLANCE(tools)&gt; directions? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Which direction should we go?</text>
+		<strategy>1</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>  &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Can you see the /symbol/ on the map? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>  &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Where is the /symbol/ on the map? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Can you locate the /symbol/ on the map? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How can we know &lt;GLANCE(throughMap)&gt; what the different symbols look like on the map? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Can you identify this symbol? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; What symbol is this one? &lt;GLANCE(map_key_button)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How much is /distance/ and &lt;GLANCE(scale)&gt; which direction is /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; How &lt;ANIMATE(metaphoricDichotomicLeft)&gt; can we measure and know the directions? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance/>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Do you know how to measure the distance and understand &lt;ANIMATE(metaphoricDichotomicRight)&gt; the symbols on the map? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So, where is &lt;GLANCE(throughMap)&gt; /direction/ of the /symbol/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; Do you know where &lt;GLANCE(tools)&gt; /direction/ of the /symbol/ is? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>  &lt;GAZE(student)&gt; Where could &lt;GLANCE(throughMap)&gt; /direction/ of the /symbol/ be? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Do you know how to figure out&lt;GLANCE(tools)&gt; the directions and the symbols on the map? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; So, /distance/ /direction/. Where &lt;ANIMATE(metaphoricDichotomicLeft)&gt; could this place be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt;/distance/ /direction/.  Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;Are you sure that /direction/ &lt;GLANCE(clicks)&gt; is over there?&lt;GAZE(clicks)&gt;</text>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(clicks)&gt;Is that really a &lt;GLANCE(student)&gt;/symbol/ you got there?</text>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(clicks)&gt;How did you figure that &lt;GLANCE(student)&gt;/distance/ was over there?</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(tools)&gt; Which tools could you use for &lt;GLANCE(student)&gt; this? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Where could the /symbol/ be /distance/ from there? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(tools)&gt; Is there a tool that you can &lt;GLANCE(student)&gt; use? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;If you consider that there are 1000 meters in 1 km, \pau=400\how many meters could there be in a \rmw=1\quarter\rmw=0\ of a km?</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;If you consider that there are 500 meters in half a km, \pau=400\how many meters could there be in a \rmw=1\quarter\rmw=0\ of a km?</text>
+		<strategy>1</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Can you see a /symbol/ in that direction? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Can you identify that symbol towards the /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Can you locate that symbol towards the /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Can you find that symbol towards the /direction/? &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Can you see a /symbol/ towards the /direction/? &lt;GLANCE(student)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Which tools will you need this time? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; How can we locate a /symbol/ /distance/ /direction/ of your current location? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; How can we locate a /symbol/ /distance/ /direction/ of your location? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; How can we find a /symbol/ /distance/ /direction/ of your current location? &lt;GLANCE(tools)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>1</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance/>
+	<utterance/>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(distance_button)&gt; I can tell you that &lt;HEADNOD(1)&gt; 1 km consists of 1000 meters.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; In order to figure out how far /distance/ is &lt;ANIMATE(metaphoricScaleDown)&gt; on this scaled down \rmw=1\map\rmw=0\, you should look at the&lt;GLANCEANDPOINT(scale)&gt; scale of the \rmw=1\map\rmw=0\  located on your left side of the screen.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure the distance we should use &lt;GAZEANDPOINTANDHIGHLIGHT(distance_button)&gt; the distance tool at the bottom right side of the screen. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; You can use the &lt;GLANCE(distance_button)&gt; distance tool to measure the distance between these two points &lt;GLANCE(throughMap)&gt;. You have to click where you &lt;ANIMATE(metaphoricDichotomicRight)&gt; want to measure from and then double click &lt;ANIMATE(metaphoricDichotomicLeft)&gt;where you want to measure  to. You can see how far you've measured on the screen. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;The &lt;GLANCEANDPOINT(scale)&gt; &lt;HEADNOD(1)&gt; scale  &lt;ANIMATE(metaphoricScaleUp)&gt;shows you how much larger the actual world is in relationship to &lt;GLANCE(throughMap)&gt; this small \rmw=1\map\rmw=0\.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; The &lt;GLANCEANDPOINT(scale)&gt; scale tells you &lt;ANIMATE(metaphoricScaleDown)&gt; how much smaller  the area shown on the \rmw=1\map\rmw=0\ is compared &lt;ANIMATE(metaphoricWorld)&gt; to the same area in real life.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCEANDWAVE(throughMap)&gt; Every map has a &lt;POINT(scale)&gt; scale visible and you should always check before you start reading a \rmw=1\map\rmw=0\. Some \rmw=1\maps\rmw=0\  &lt;ANIMATE(metaphoricWorld)&gt;represent a whole country, whereas some only represent smaller areas&lt;ANIMATE(metaphoricDichotomicRight)&gt; like this one. Knowing how far away one is looking in advance &lt;HEADNOD(1)&gt; is really important.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; \rmw=1\Maps\rmw=0\ can have different scales &lt;POINT(scale)&gt;, depending on what people want to use them for. For example, &lt;ANIMATE(metaphoricScaleUp)&gt; large scale \rmw=1\maps\rmw=0\ are better for showing individual buildings in detail &lt;ANIMATE(metaphoricScaleDown)&gt;because they only cover a small area of land. But small scale \rmw=1\maps\rmw=0\ are ideal for travelling either by car or walking &lt;ANIMATE(metaphoricWorld)&gt;because they cover large areas of land.</text>
+		<strategy>2</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(tools)&gt; Well, if &lt;GLANCE(student)&gt; you look at the compass you can figure out that /direction/ is an intermediate direction. Intermediate just means that it is between two main cardinal points. For example: South west is an \rmw=1\intermediate direction located between&lt;ANIMATE(dichotomicLeft)&gt;\pau=500\ South&lt;ANIMATE(dichotomicRight)&gt; and West\rmw=0\.&lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDWAVE(compass_tool)&gt; You see, /direction/ is an intermediate direction. &lt;GLANCE(student)&gt;</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; You can use the &lt;GLANCEANDPOINT(compass_tool)&gt; compass tool to understand the cardinal points. This will help you find the way. What you should keep in mind then, is that \rspd=90\\rmw=1\'N' \rmw=0\stands for \rmw=1\'north'\rmw=0\, \rmw=1\'S'\rmw=0\ stands for \rmw=1\'south'\rmw=0\, \rmw=1\'E' \rmw=0\stands for \rmw=1\'East'\rmw=0\, and \rmw=1\'W'\rmw=0\ stands for \rmw=1\'West'\rmw=0\\rspd=100\.&lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To understand directions &lt;GLANCE(throughMap)&gt; we should use the &lt;GLANCEANDPOINTANDHIGHLIGHT(compass_button)&gt; compass tool at the bottom of the right side of the screen. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(compass_tool)&gt;You have &lt;ANIMATE(iconicCompassPoints)&gt; four main  cardinal points:  North, South, East, and West.</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /direction/ is an intercardinal direction, because it is one of the &lt;GLANCEANDPOINT(cardinal/direction/)&gt; four intermediate compass points located &lt;GLANCEANDPOINTANDHIGHLIGHT(cardinalPoints)&gt;halfway between the main cardinal points.</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /direction/ is a \rmw=1\secondary \rmw=0\intercardinal point of the compass. This is a direction \rmw=1\between \rmw=0\ a &lt;GLANCEANDPOINTANDHIGHLIGHT(cardinalPoints)&gt;main cardinal point &lt;GLANCEANDPOINTANDHIGHLIGHT(interCardinalPoints)&gt; and an intercardinal point. I can give you an example: \pau=500\ \rmw=1\north north west \rmw=0\is located between &lt;GLANCEANDHIGHLIGHT(cardinalNorth)&gt; \rmw=1\north,&lt;GLANCEANDHIGHLIGHT(cardinalNorthWest)&gt; and north west\rmw=0\.</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Directions such as south west are called &lt;HEADNOD(1)&gt; intercardinal &lt;GLANCEANDPOINT(compass_button)&gt;directions on the compass.</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can clarify the compass points for you: \pau=700\So, when looking at the compass &lt;GLANCEANDPOINTANDHIGHLIGHT(compass_tool)&gt; you have four main cardinal points: &lt;HEADNOD(1)&gt; &lt;GLANCEANDPOINTANDHIGHLIGHT(cardinalPoints)&gt; North, South, West, and East. &lt;HIGHLIGHT(cardinalNorth)&gt; North goes up and &lt;HIGHLIGHT(cardinalSouth)&gt; South goes down, &lt;HIGHLIGHT(cardinalWest)&gt; West goes left and &lt;HIGHLIGHT(cardinalEast)&gt; East goes right.</text>
+		<strategy>2</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;The /symbol/ has a specific map symbol associated with it. If you look at the &lt;GLANCEANDPOINT(map_key_button)&gt; map key tool, you can see what it is represented by.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Now that we know some of the  &lt;ANIMATE(pointToOtherAndSelf)&gt;map key symbols we should look for the specific &lt;GLANCEANDWAVE(throughMap)&gt; /symbol/ on the map.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to understand the different symbols on the map, &lt;GLANCEANDPOINT(map_key_button)&gt;you can check the map key tool.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; If you look at the \rmw=1\map\rmw=0\, you can see many different symbols spread all around it.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Each symbol is represented &lt;HEADNOD(1)&gt; differently on the \rmw=1\map\rmw=0\.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Symbols represent specific landmarks on the \rmw=1\map\rmw=0\.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Maps have distinctive symbols that represent different places.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Map symbols are either red or &lt;HEADNOD(1)&gt; blue on this \rmw=1\map\rmw=0\.</text>
+		<strategy>2</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can tell you &lt;ANIMATE(metaphoricScaleUp)&gt; that 1 km consists of 1000 meters &lt;ANIMATE(diectic/direction/)&gt; and that /direction/ goes.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We want to discover where /distance/ /direction/ is.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We want to locate /distance/ /direction/ on the \rmw=1\map \rmw=0\.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We are looking for /distance/ /direction/.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCEANDWAVE(tools)&gt; If we use the tools available we &lt;ANIMATE(metaphoricScaleUp)&gt;can measure the distance and understand the directions.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Right now we have to combine &lt;GLANCEANDPOINT(tools)&gt; different types of \rmw=1\map\rmw=0\ skills to solve this step. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We need to combine the &lt;POINTANDHIGHLIGHT(distance_button)&gt; distance and the &lt;POINTANDHIGHLIGHT(compass_button)&gt; direction on the \rmw=1\map\rmw=0\ to discover this place. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt;To measure /distance/ /direction/ we need to use the &lt;POINT(tools)&gt; distance tool and the compass. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure /distance/ /direction/ we need to use the &lt;POINT(tools)&gt; distance tool and the compass. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; To measure /distance/ /direction/ we need to use the &lt;POINTANDHIGHLIGHT(tools)&gt; distance tool and the compass. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; To go /distance/ from the /symbol/ we can use the &lt;POINT(tools)&gt; distance and the map key tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(tools)&gt; We can use the &lt;ANIMATE(metaphoricScaleUp)&gt; tools to measure the distance and understand what the symbols look like on the \rmw=1\map\rmw=0\. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We need to combine the &lt;GLANCEANDWAVE(tools)&gt; distance and the symbols on the map to discover &lt;GLANCE(throughMap)&gt; where we should go. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; In order to go /direction/ of the /symbol/ we should go &lt;POINT(cardinal/direction/)&gt; and&lt;GLANCEANDPOINTANDHIGHLIGHT(map_key_button)&gt; use the map key tool to see what the /symbol/ looks like on the \rmw=1\map\rmw=0\. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCEANDWAVE(tools)&gt; Go and check the compass and the map key tools to understand the direction and the symbol we are looking for. &lt;GAZE(clicks)&gt;</text>
+		<strategy>2</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance/>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Ok, so you &lt;HEADNOD(1)&gt; have figured out /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Ok, so you &lt;HEADNOD(1)&gt; have figured out /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; So now you know about how far &lt;GLANCE(throughMap)&gt; you are going.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So now &lt;HEADNOD(1)&gt; you know the distance.</text>
+		<strategy>3</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So you know which &lt;ANIMATE(diectic/direction/)&gt; way /direction/ is now.</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Now &lt;ANIMATE(pointToOther)&gt; you know which way /direction/ is.</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So &lt;HEADNOD(1)&gt; now you understand which way /direction/ is.</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You have figured out which way you are going now.</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Now you know which direction that is.</text>
+		<strategy>3</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Ok, so you have identified the /symbol/.</text>
+		<strategy>3</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; So now you know what a /symbol/ looks like.</text>
+		<strategy>3</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You found the right symbol.</text>
+		<strategy>3</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You found the /symbol/.</text>
+		<strategy>3</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Now you have figured out the &lt;GLANCE(throughMap)&gt; direction and the distance.</text>
+		<strategy>3</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Now you understand that /direction/ is that way &lt;ANIMATE(diectic/direction/)&gt;, and that /distance/ in that direction places you over here.</text>
+		<strategy>3</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Now you know that /direction/ is that way &lt;ANIMATE(diectic/direction/)&gt;, and that /distance/ in that direction places you over here &lt;GLANCEANDPOINT(rightAnswer)&gt;.</text>
+		<strategy>3</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Now you have figured out how far and in which direction you are going.</text>
+		<strategy>3</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Ok /student/, so you have located the &lt;HEADNOD(1)&gt; /symbol/ /distance/ from &lt;ANIMATE(pointToOther)&gt; your original location.</text>
+		<strategy>3</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You have found the /symbol/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You have found the /symbol/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; You have found the /symbol/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You have found the /symbol/ in the right direction. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; You have found the right symbol towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Ok /student/, so you &lt;ANIMATE(metaphoricDichotomicLeft)&gt; managed to find the /symbol/ /distance/ /direction/ of your initial location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>3</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Ok, so now you managed to find &lt;ANIMATE(metaphoricDichotomicLeft)&gt; the /symbol/ /distance/ /direction/ of your initial location.</text>
+		<strategy>3</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; So you managed to find the &lt;ANIMATE(metaphoricDichotomicRight)&gt; /symbol/ /distance/ /direction/ of your initial location.</text>
+		<strategy>3</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; So you have figured out both the &lt;POINTANDHIGHLIGHT(distance_button)&gt; distance, and &lt;POINTANDHIGHLIGHT(map_key_button)&gt; the symbol.</text>
+		<strategy>3</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So we were supposed to go to the &lt;GLANCE(throughMap)&gt; \rspd=70\ information centre in Queen Square \rspd=100\ near the centre of the \rmw=1\map\rmw=0\. Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>8</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/ Remember that is was the \rspd=70\ information centre in Queen Square\rspd=100\. &lt;ANIMATE(thinking)&gt; Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>8</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; So, we were supposed to find a \rspd=70\ telephone 50 meters north of the information centre \rspd=100\. Where is this telephone? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>9</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; If we head \rspd=70\ 50 meters towards the north from the information centre  \rspd=100\, we should be able to find a telephone. Now, where could it be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>9</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Remember that we were looking for &lt;GLANCE(throughMap)&gt; a \rspd=70\ telephone symbol 50 meters north of the information centre  \rspd=100\. Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>9</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We were supposed to locate the \rspd=70\ museum 100 meters east of the telephone \rspd=100\. So where should we go? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>10</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; /student/ Remember that we should go towards the east 100 meters from the telephone, and we might spot the museum. Can you find it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>10</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Ok, so we were supposed to head \rspd=70\ 300 meters north from the museum, until we reach an information point \rspd=100\. Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>11</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Ok, so we are going towards \rspd=70\ the north for 300 meters, and looking for a museum symbol \rspd=100\ somewhere in that area. Do you see it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>11</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; From the \rspd=70\ information point, &lt;GLANCE(throughMap)&gt; we should go north east for 100 meters until we see a nature reserve symbol \rspd=100\. Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>12</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So can you find the \rspd=70\ nature reserve if you go north east for 100 \rspd=100\ meters? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>12</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We are supposed to locate a \rspd=70\ castle 300 meters south east of the nature reserve \rspd=100\. &lt;ANIMATE(metaphoricRevelation)&gt; Where should we go? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>13</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Remember that we are heading &lt;ANIMATE(diectic/direction/)&gt; \rspd=70\ south east of the nature reserve, &lt;GLANCE(throughMap)&gt; and we should keep going for about 300 meters \rspd=100\, and maybe we'll find a castle there. Can you find it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>13</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We are supposed to find &lt;GLANCE(throughMap)&gt; an \rspd=70\ English heritage symbol 150 meters north east of the castle \rspd=100\. Where is that? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>14</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; /student/ Remember that we should head \rspd=70\ north east for about 150 meters \rspd=100\, &lt;GLANCEANDWAVE(throughMap)&gt; and we should locate the \rspd=70\ English heritage symbol \rspd=100\. Can you find it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>14</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; &lt;HEADNOD(3)&gt; So we need to find the \rspd=70\ information point symbol half a kilometre south east of the English heritage \rspd=100\ site. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>15</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/ Remember that we should travel \rspd=70\ half a kilometer south east of the English heritage \rspd=100\ site. &lt;GLANCE(throughMap)&gt; There we should find an information point. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>15</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; We were supposed to find a \rspd=70\ railway station symbol 100 meters south of the information point \rspd=100\. &lt;GLANCE(throughMap)&gt; Where could that be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>16</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; From the information point, we should go \rspd=70\ south for about 100 meters until we get to a railway station \rspd=100\. Can you find the railroad station? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>16</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We were supposed to take the bus &lt;WAVE(throughMap)&gt; from the railway station in the following direction: \rspd=70\ west south west, and then keep going for about 170 meters \rspd=100\. Don't forget to get off at the bus stop! &lt;GLANCE(throughMap)&gt; Can you see it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>17</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Where could this \rspd=70\ bus stop 170 meters towards the west south west \rspd=100\ be located? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>17</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We were supposed to head to the \rspd=70\ parking lot a quarter of a kilometre from the bus station in the following direction: north west \rspd=100\. &lt;GLANCE(throughMap)&gt; Now where is that? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>18</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Remember that we are going &lt;GLANCE(throughMap)&gt; towards the \rspd=70\ north west \rspd=100\ for a quarter of a km. &lt;HEADNOD(1)&gt; There we should find a parking symbol. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>18</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; There should be a \rspd=70\ garden 200 meters in the following direction: south south east \rspd=100\ of the parking symbol. Can you find it? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>19</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Remember that we should go \rspd=70\ south south east for 200 meters \rspd=100\, where we should find a garden. &lt;GLANCE(throughMap)&gt; Do you see it somewhere? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>19</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Remember that we were looking for the \rspd=70\ information centre 0.65 kilometres west north west \rspd=100\ of the garden? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>20</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So we are supposed to go \rspd=70\ 0.65 km in the following direction: west north west \rspd=100\. &lt;GLANCE(throughMap)&gt; Can you find the information point somewhere around there? &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>20</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We need to locate the /symbol/ situated /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We now want to locate the /symbol/ situated /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We need to find the /symbol/ situated /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; You need to find the /symbol/ which is /distance/ /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We are searching for the /symbol/ which is /distance/ /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; You are looking for the /symbol/ which is /distance/ /direction/ of your current location. &lt;GAZE(clicks)&gt;</text>
+		<strategy>4</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So half a kilometer would be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So &lt;ANIMATE(metaphoricScaleUp)&gt; 1000 meters is the same as? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure the &lt;WAVE(distance_button)&gt; distance you need to use the? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So /direction/ should be between &lt;WAVEANDHIGHLIGHT(cardinalPoints)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So /direction/ should be between &lt;WAVEANDHIGHLIGHT(cardinalPoints)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; In order to figure the cardinal direction you would need the &lt;GLANCE(compass_button)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /direction/ is towards the? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; A /symbol/ looks like a? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to find out what map symbol looks like, you can check the &lt;GLANCE(map_key_button)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So /distance/ towards the /direction/ would ? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So /distance/ towards the /direction/ would be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So /distance/ towards the /direction/ would be? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to figure out how to go /distance/ towards the /direction/, you would need to use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to know both the distance and the symbol, you should use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to find a /symbol/ towards the /direction/, you should use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to find a /symbol/ towards the /direction/, you should use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you need to find a /symbol/ towards the /direction/, you should use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To figure out all of these things, you could use &lt;GLANCE(tools)&gt;? &lt;GAZE(clicks)&gt;</text>
+		<strategy>5</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Well, /direction/ is a special direction, so we also need to look at the &lt;GLANCE(compass_button)&gt; compass in a special way.</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/, to measure /distance/ we should use &lt;GAZEANDPOINTANDHIGHLIGHT(distance_tool)&gt; the distance tool at the bottom of the right side of the screen. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; /student/, you should go farther than that. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I think you've run a bit too far now. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; /student/, you are on the right track, keep going that way. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; We are still far away. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/, we should probably get back a little. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; If you are not sure where /direction/ is on the map you can use &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass tool. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; If you have doubts about this direction you can use &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass tool. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDPOINT(cardinal/direction/)&gt; It is more &lt;ANIMATE(diectic/direction/)&gt;towards this way. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /direction/ is a special direction, go ahead and use &lt;GLANCEANDPOINT(compass_button)&gt; the compass tool to locate it. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; This is also a special direction, if you need guidance, you can try to use &lt;GLANCEANDWAVE(compass_button)&gt; the compass. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Think about the cardinal points to discover that direction. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Consider what we talked about the cardinal points to help you discover this one. &lt;GLANCE(throughMap)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDWAVE(cardinal/direction/)&gt; This directions is a bit more &lt;ANIMATE(diectic/direction/)&gt;towards this way. &lt;GLANCE(student)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; If you are not certain what the /symbol/ looks like on the map, we can check &lt;GLANCEANDWAVE(map_key_button)&gt; the map key tool. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDWAVE(rightAnswer)&gt; The symbol is located somewhere over here. &lt;GLANCE(student)&gt;</text>
+		<strategy>6</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt;To measure /distance/ and go /direction/ we can use &lt;GLANCEANDHIGHLIGHT(distance_button)&gt; the distance and &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure /distance/ and go /direction/ we can use &lt;GLANCEANDHIGHLIGHT(distance_button)&gt; the distance and &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure /distance/ and go /direction/ we can use &lt;GLANCEANDHIGHLIGHT(distance_button)&gt; the distance and &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To measure /distance/ of the /symbol/ you can use &lt;GLANCEANDHIGHLIGHT(distance_button)&gt; the distance and &lt;GLANCEANDHIGHLIGHT(map_key_button)&gt; the map key tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To understand better how we get /direction/ of the /symbol/ we can use &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass and &lt;GLANCEANDHIGHLIGHT(map_key_button)&gt; the map key tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To understand better how we get /direction/ of the /symbol/ we can use &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass and &lt;GLANCEANDHIGHLIGHT(map_key_button)&gt; the map key tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; To understand better how we get /direction/ of the /symbol/ we can use &lt;GLANCEANDHIGHLIGHT(compass_button)&gt; the compass and &lt;GLANCEANDHIGHLIGHT(map_key_button)&gt; the map key tools. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDHIGHLIGHT(tools)&gt; If we use the map tools it will be easier to measure /distance/ /direction/ /symbol/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDHIGHLIGHT(tools)&gt; Let's use the available map tools to measure /distance/ /direction/ so that we can find the /symbol/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; You should combine different &lt;GLANCEANDPOINT(tools)&gt; tools in order to understand where we need to go. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCEANDWAVEANDHIGHLIGHT(tools)&gt; Use the available tools to help you. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Let's try using the &lt;GAZEANDPOINTANDHIGHLIGHT(tools)&gt; scale, compass and map key to determine where the /symbol/ /distance/ /direction/ is located. &lt;GAZE(clicks)&gt;</text>
+		<strategy>6</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/, don't worry, I can help you out. The correct distance is /distance/, so it is right &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; over here.  &lt;GAME(rightAnswer)&gt;</text>
+		<strategy>7</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; 500 meters is actually &lt;ANIMATE(metaphoricDichotomicLeft)&gt; half a kilometer. &lt;GAZE(clicks)&gt;</text>
+		<strategy>7</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(metaphoricDichotomicRight)&gt; One kilometer is actually 1000 meters. &lt;GAZE(clicks)&gt;</text>
+		<strategy>7</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; /student/, I see what you're thinking, but /direction/ is actually &lt;ANIMATE(diectic/direction/)&gt; that way. &lt;GAZE(clicks)&gt;</text>
+		<strategy>7</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Well /student/, I see what you're thinking, but /direction/ is actually &lt;ANIMATE(diectic/direction/)&gt; that way. &lt;GAZE(clicks)&gt;</text>
+		<strategy>7</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; /student/ I understand what you're thinking, but /direction/ is actually &lt;ANIMATE(diectic/direction/)&gt; that way. &lt;GAZE(clicks)&gt;</text>
+		<strategy>7</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can help you out by saying that the /symbol/ looks like &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; this.</text>
+		<strategy>7</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can tell you that /distance/ /direction/ of there is actually over &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; there. </text>
+		<strategy>7</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can tell you that /distance/ /direction/ of there is actually over &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; there. </text>
+		<strategy>7</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; I can tell you that /distance/ /direction/ of there is actually over &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; there. </text>
+		<strategy>7</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Ok, so if we go /distance/ we can see the symbol right &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; here. </text>
+		<strategy>7</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Well, /direction/ would mean that &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; this is the symbol we are looking for.</text>
+		<strategy>7</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; This is really difficult /student/, so I can tell you that the /symbol/ /distance/ /direction/ of here is &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; right there. </text>
+		<strategy>7</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; This is a very challenging one /student/, and I can tell you that the /symbol/ /distance/ /direction/ of here is &lt;GLANCEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; right there. </text>
+		<strategy>7</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; This is a hard one /student/, so I can tell you that the /symbol/ /distance/ /direction/ of here is &lt;GAZEANDPOINTANDHIGHLIGHT(rightAnswer)&gt; right there. </text>
+		<strategy>7</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Let's move &lt;ANIMATE(metaphoricDichotomicRight)&gt; to another exercise.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; So now we are going for the &lt;ANIMATE(metaphoricDichotomicRight)&gt; next challenge.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Should we go for the next question?</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Let's move on /student/.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;  &lt;HEADNOD(1)&gt; Let's continue /student/.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; So, now I will &lt;ANIMATE(pointToOther)&gt; present you the next step.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Let's keep this rhythm and continue to the next task /student/.</text>
+		<strategy>9</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Awesome!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Super!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Way to go!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Excellent, /student/!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Amazing job, /student/!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; This is great, /student/!</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; You are so good at this, /student/! &lt;HEADNOD(1)&gt;</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; You got it right! &lt;HEADNOD(3)&gt;</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; You figured it out, /student/! &lt;HEADNOD(3)&gt;</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; You found it! &lt;HEADNOD(3)&gt;</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Wow! &lt;HEADNOD(3)&gt;</text>
+		<strategy>19</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Very good. &lt;HEADNOD(1)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Good job. &lt;HEADNOD(1)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Great work. &lt;HEADNOD(1)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Exactly.</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Precisely.</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; You got &lt;ANIMATE(pointToOther)&gt; that right.</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Yes. &lt;GAZE(clicks)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(3)&gt; Correct. </text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; That's right. </text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(3)&gt; That's correct. </text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Yeah. &lt;GAZE(clicks)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; Great. &lt;GAZE(clicks)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; You are really good at this /student/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>20</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance/>
+	<utterance/>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Yeah.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>21</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Okay.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>21</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance/>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Almost. You went /distance/, but in the wrong direction. &lt;GLANCE(throughMap)&gt; We should head /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Almost. You found the right symbol, but it's not quite as far away as we needed to go. &lt;GLANCE(throughMap)&gt; We should go /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Almost /student/. You went in the right direction, but not the right distance. &lt;GLANCE(throughMap)&gt; You need to go /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Almost /student/. You recognized the right symbol, but it was not the correct distance. &lt;GLANCE(throughMap)&gt; We should go /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; You are partly right here /student/. You found a /symbol/, but it was not in the right place. We need to go /distance/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; You are partly right here /student/. You went the in the right direction, but you missed the symbol and how far away it was. So we should look for a /symbol/, which is /distance/ away instead. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; That is almost correct /student/. You see, you recognized the right symbol on the map, but we were looking for one in a &lt;GLANCE(throughMap)&gt; different direction.  &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; You figured out the cardinal direction here, but the symbol is not quite right. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(3)&gt; You are really close, /student/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; I can see how you are thinking here, and you are almost right. But what you need to do is &lt;GLANCEANDPOINT(scale)&gt; look at the scale and measuring tool &lt;GAZEANDPOINT(distance_button)&gt;again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; I can see how you are thinking here, and you are almost right. But what you need to do is  &lt;GAZEANDPOINT(compass_tool)&gt; look at the compass again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; I can see how you are thinking here, and you are almost right. But what you need to do is &lt;GAZEANDPOINT(map_key_tool)&gt; look at the map key again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; Very close. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(1)&gt; That is almost correct /student/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(3)&gt; You're on the right track /student/. You've measured correctly, but you are slightly off in the direction you needed to go. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; You've almost got it now. &lt;GAZE(clicks)&gt;</text>
+		<strategy>22</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not really. That is actually a /symbol/,  &lt;ANIMATE(pointToOther)&gt; but we were supposed to find a /symbol/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not really /student/. That is actually a /symbol/ towards the /direction/, &lt;ANIMATE(pointToOther)&gt; but we were supposed to find a /symbol/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not really /student/. That was actually /distance/,  &lt;ANIMATE(pointToOther)&gt; but we were supposed to go /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not really /student/. That is actually /direction/,  &lt;ANIMATE(pointToOther)&gt; but we were supposed to go /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not quite /student/. That is actually a /symbol/,  &lt;ANIMATE(pointToOther)&gt; but we were supposed to find a /symbol/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not quite /student/. That is actually towards the /direction/, &lt;ANIMATE(pointToOther)&gt; but we were supposed to go towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(1)&gt; Not quite /student/. That is actually /distance/, &lt;ANIMATE(pointToOther)&gt; but we were supposed to find /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; Ok, so that's not quite right. &lt;ANIMATE(thinking)&gt; &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; We didn't get this quite right. You marked a /symbol/ /distance/ /direction/ of your initial location, but you were supposed to find /symbol/ /distance/ /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; We didn't get this quite right. You just measured /distance/ towards the /direction/, but you were supposed to measure /distance/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(sad)&gt; That solution is wrong unfortunately. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(sad)&gt; That's incorrect. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's /distance/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>2</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's a /symbol/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>3</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's a /distance/ towards /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>4</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's a /symbol/ /distance/ from there. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>5</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's a /symbol/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>6</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No, that's a /symbol/ /distance/ towards the /direction/. &lt;GAZE(clicks)&gt;</text>
+		<strategy>23</strategy>
+		<skill>7</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Try again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Let's go again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(metaphoricDichotomicLeft)&gt; Let's try this once again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Let's see if we can get this now. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Let's go back a bit. &lt;GLANCE(throughMap)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; I would like you to try this again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; We should try again, &lt;ANIMATE(happy)&gt; and I'm sure we'll get it this time. &lt;GAZE(clicks)&gt;</text>
+		<strategy>10</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Ok, so let's see if we can figure out the direction this time. &lt;GLANCE(throughMap)&gt;</text>
+		<strategy>10</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Ok, so let's see if we can figure out the symbol this time. &lt;GLANCE(throughMap)&gt;</text>
+		<strategy>10</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Ok, so let's see if we can figure out the distance this time. &lt;GLANCE(throughMap)&gt;</text>
+		<strategy>10</strategy>
+		<skill>1</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Yes.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Yeah.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; No.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNODNEGATIVE(2)&gt; Nope.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Okay.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Got it.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Maybe.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; Perhaps.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(thinking)&gt; I'm not sure.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(thinking)&gt; I don't know.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;HEADNOD(2)&gt; I think so.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(sadness)&gt; I'm sorry.</text>
+		<strategy>11</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; This is so fun!</text>
+		<strategy>12</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(enthusiasm)&gt; /student/ I'm having a great time!</text>
+		<strategy>12</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; /student/ Can I help somehow?</text>
+		<strategy>13</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; Do you need my help?</text>
+		<strategy>13</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; Do you want my help?</text>
+		<strategy>13</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; How can I help?</text>
+		<strategy>13</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; /student/ Is there anything I can do?</text>
+		<strategy>13</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelf)&gt; Do you want me to back off a little bit?</text>
+		<strategy>14</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; I will give you a little time to think about this.</text>
+		<strategy>14</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; /student/ there is no rush, &lt;ANIMATE(pointToOther)&gt; take all the time you need. &lt;GAZE(clicks)&gt;</text>
+		<strategy>14</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Should I be quiet?</text>
+		<strategy>14</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelfAndOther)&gt; Do you want me to give you some more time?</text>
+		<strategy>14</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;&lt;ANIMATE(sadness)&gt;I am really sorry, but I think I am having some technical problems.</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Are you having trouble with the screen?</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelf)&gt; /student/: can you hear me well?</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;ANIMATE(metaphoricRevelation)&gt; Sometimes the interface is a little stubborn. Don't worry /student/, &lt;ANIMATE(metaphoricDichotomicLeft)&gt; just try to click again when this happens. &lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Try to click again. &lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Can you try to click again? &lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToSelf)&gt; Am I difficult to understand?</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;If you lose track of where you are on the map, you will find that your current location is marked in orange. &lt;GLANCEANDWAVE(compass_tool)&gt;It is also always in the center of the map. So everytime that I say that you should go somewhere, you should always &lt;POINT(compass_tool)&gt; start at that orange circle.</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDPOINTANDHIGHLIGHT(compass_button)&gt; You can just click the compass button again if you want to close it. </text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDPOINTANDHIGHLIGHT(map_key_button)&gt; You can just click the button for the map key again if you want to close it. </text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDPOINTANDHIGHLIGHT(distance_button)&gt; You can just click the button for the measuring tool again if you want to close it. </text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDPOINTANDHIGHLIGHT(scrapbook_button)&gt; You can just click the scrapbook button again if you want to close it. </text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;To move the statue, you can just click and drag it.&lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>Here. I'll get that for &lt;GLANCE(student)&gt; you.&lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZEANDWAVE(tools)&gt;I think that it might be easier if we close the tools. Here. I'll get that for &lt;GLANCE(student)&gt; you.&lt;GAME(hideRuler)&gt;&lt;GAME(hideCompass)&gt;&lt;GAME(hideMapKey)&gt;&lt;GAZE(clicks)&gt;</text>
+		<strategy>15</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;How are you feeling?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;&lt;ANIMATE(pointToOtherAndSelf)&gt;It was nice meeting you, /student/. I hope you enjoyed this activity. Take care now.&lt;ANIMATE(goodBye)&gt;Good bye!</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>1</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Are you having fun?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Are you bored? </text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Do you like geography /student/?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;POINT(student)&gt;Have you ever done orienteering?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Do you know any other robots besides me?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; Are you used to computer tablets?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; I am really enjoying to be working with you, /student/.</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Do you think this touchtable works well?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Is the table difficult to use, you think?</text>
+		<strategy>16</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; &lt;ANIMATE(waitingGesture)&gt; Ok, give me a moment.</text>
+		<strategy>17</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(random)&gt; &lt;ANIMATE(thinking)&gt; Let me think.</text>
+		<strategy>17</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Let me just check something. &lt;ANIMATE(waitingGesture)&gt;</text>
+		<strategy>17</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;GLANCE(throughMap)&gt; Just a second. &lt;ANIMATE(waitingGesture)&gt;</text>
+		<strategy>17</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(sadnessNodding)&gt; I'm sorry /student/, but I wasn't programmed to answer that question.</text>
+		<strategy>18</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; /student/, &lt;ANIMATE(sadnessNodding)&gt; unfortunately I wasn't programmed to answer to that.</text>
+		<strategy>18</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(sadnessNodding)&gt; I'm sorry /student/, but I am unable to answer that.</text>
+		<strategy>18</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Oh, I see you got it now. &lt;GAZE(rightAnswer)&gt;</text>
+		<strategy>24</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; Oh! &lt;GAZE(rightAnswer)&gt;</text>
+		<strategy>24</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt;  Oh, ok! &lt;GAZE(rightAnswer)&gt;</text>
+		<strategy>24</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; &lt;ANIMATE(happy)&gt; Aha! &lt;GAZE(rightAnswer)&gt;</text>
+		<strategy>24</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt;  Oh, that's how it is. &lt;GAZE(rightAnswer)&gt;</text>
+		<strategy>24</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GLANCE(student)&gt; \rmw=1\ \rspd=70\ /distance/ \rspd=100\  \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>1</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt;  \rmw=1\ \rspd=70\ /direction/ \rspd=100\ \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>2</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt;  \rmw=1\ \rspd=70\ /symbol/ \rspd=100\ \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>3</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt;  \rmw=1\ \rspd=70\ /distance/ /direction/ \rspd=100\ \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt;  \rmw=1\ \rspd=70\ /distance/ /symbol/ \rspd=100\ \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>5</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt; \rmw=1\ \rspd=70\ /direction/ /symbol/ \rspd=100\ \rmw=0\ &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>6</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GLANCE(student)&gt;  \rmw=1\ \rspd=70\ /distance/ /direction/ /symbol/ \rspd=100\ \rmw=0\  &lt;GAZE(clicks)&gt;</text>
+		<strategy>8</strategy>
+		<skill>7</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;&lt;GLANCEANDPOINT(clicks)&gt;Is this your final answer?&lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; &lt;ANIMATE(pointToOther)&gt; How could you solve this? &lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Should we &lt;ANIMATE(metaphoricDichotomicRight)&gt; begin with &lt;ANIMATE(metaphoricDichotomicLeft)&gt; the direction or the distance? &lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text> &lt;GAZE(student)&gt; So /student/ how &lt;ANIMATE(pointToOther)&gt; can you solve this? &lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Which one should we target first? &lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; How about we try to figure out \rmw=1\one \rmw=0\ of these things first. I suggest you begin by looking at the &lt;ANIMATE(iconicCompassPoints)&gt; direction that you need to go&lt;GLANCEANDHIGHLIGHT(compass_button)&gt;&lt;GAME(showCompass)&gt;. Can you tell me which way /direction/ is on the compass?&lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt; Should we &lt;ANIMATE(metaphoricDichotomicRight)&gt; begin with &lt;ANIMATE(metaphoricDichotomicLeft)&gt; the direction or the distance? &lt;GAZE(clicks)&gt;</text>
+		<strategy>25</strategy>
+		<skill>4</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;We need to combine all the clues to know where we should place the statue. Which clue should we target first?</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;Maybe we can start by figuring out the direction first? &lt;ANIMATE(thinking)&gt;Once we know that,&lt;ANIMATE(dichotomicLeft)&gt; it might be easier to proceed.</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;&lt;ANIMATE(waitingGesture)&gt;Ok, let's slow down a little bit, /student/. &lt;ANIMATE(pointToOtherAndSelf)&gt;How about we read through the directions one more time, and take the instructions step by step?</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+	<utterance>
+		<text>&lt;GAZE(student)&gt;&lt;GLANCEANDWAVE(scrapbook)&gt;Notice that the  \rmw=1\clue \rmw=0\ says &lt;ANIMATE(dichotomicRight)&gt;somewhere\rmw=1\ in between\rmw=0\ 100 meters &lt;ANIMATE(dichotomicLeft)&gt; and a quarter of a kilometer.</text>
+		<strategy>25</strategy>
+		<skill>0</skill>
+		<dynamic>0</dynamic>
+	</utterance>
+</data-set>

@@ -1,0 +1,6 @@
+C:\Users\Eugenio\Documents\AudioUtilities\Library\bin\Release\Library.dll
+C:\Users\Eugenio\Documents\AudioUtilities\Library\bin\Release\Library.pdb
+C:\Users\Eugenio\Documents\AudioUtilities\Library\bin\Release\NAudio.dll
+C:\Users\Eugenio\Documents\AudioUtilities\Library\bin\Release\NAudio.xml
+C:\Users\Eugenio\Documents\AudioUtilities\Library\obj\Release\Library.dll
+C:\Users\Eugenio\Documents\AudioUtilities\Library\obj\Release\Library.pdb

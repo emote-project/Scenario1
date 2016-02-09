@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>XmlRpcLight</id>
+    <version>1.0.0.0</version>
+    <title>XmlRpcLight</title>
+    <authors>Stig Schmidt Nielsson</authors>
+    <owners>Stig Schmidt Nielsson</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>XmlRpcLight is based on XmlRpc by Cook Computing, but without the http web parts and without dependency on System.Web.</description>
+    <releaseNotes>Initial release based on sources of XmlRpc by Charles Cook.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>XmlRpc</tags>
+  </metadata>
+</package>

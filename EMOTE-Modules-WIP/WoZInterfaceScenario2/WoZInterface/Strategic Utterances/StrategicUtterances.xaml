@@ -1,0 +1,123 @@
+﻿<UserControl x:Class="WOZInterface.StrategicUtterances"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="818" >
+
+    <UserControl.Resources>
+
+
+        <ControlTemplate x:Key="CustomButton" TargetType="Button">
+            <Grid>
+                <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/off.png" Height="64" Width="64" />
+                <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/on.png" />
+                </MultiDataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+
+
+        <!--<ControlTemplate x:Key="SmallSkillClearButton" TargetType="Button">
+            <Grid>
+                <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/XSmallOff.png" Height="32" Width="32" />
+                <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/XSmallOn.png" />
+                </MultiDataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="SmallSkillAllButton" TargetType="Button">
+            <Grid>
+                <Image Name="TickImage" Source="pack://application:,,,/Images/Generic/YesSmallOff.png" Height="32" Width="32" />
+                <TextBlock Text="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter TargetName="TickImage" Property="Source" Value="pack://application:,,,/Images/Generic/YesSmallOn.png" />
+                </MultiDataTrigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>-->
+
+
+
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel Margin="195,10,154,386">
+
+            <Button Template="{StaticResource SmallSkillClearButton}" Name="ClearSkill"  Click="ClearAllSkills"  Width="39" Margin="0,27,0,0" ></Button>
+            <CheckBox Name="chkbox1" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource DistanceCheckBox}" Margin="0,27,0,0" />
+            <CheckBox Name="chkbox2" IsChecked="False" Click="RefreshUtteranceList" Template="{StaticResource DirectionCheckBox}" Margin="0,27,0,0" />
+            <CheckBox Name="chkbox3" IsChecked="False" Click="RefreshUtteranceList" Template="{StaticResource SymbolCheckBox}" Margin="0,27,0,0" />
+            <Button Template="{StaticResource SmallSkillAllButton}" Name="FillSkill"  Click="SelectAllSkills"  Width="34" Margin="0,27,0,0" ></Button>
+        </DockPanel>
+
+        <Grid Margin="239,77,460,404">
+            <TextBlock FontSize="10" Text="Distance" HorizontalAlignment="Center" Name="Distance" Foreground="White" MouseLeftButtonDown="RefreshUtteranceList"/>
+        </Grid>
+
+        <Grid Margin="371,77,335,404">
+            <TextBlock FontSize="10" Text="Direction" HorizontalAlignment="Center" Name="Direction" Foreground="White" MouseLeftButtonDown="RefreshUtteranceList" />
+        </Grid>
+
+        <Grid Margin="497,77,204,404">
+            <TextBlock FontSize="10" Text="Symbol" HorizontalAlignment="Center" Name="Symbol" Foreground="White" MouseLeftButtonDown="RefreshUtteranceList"/>
+        </Grid>
+
+
+        
+        
+        <DockPanel x:Name="a" Margin="173,101,129,314">
+
+            <RadioButton GroupName="UtteranceSelect" Name="rb1" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="True" Checked="RefreshUtteranceList">Pump</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb2" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Elaborate</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb3" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Summarise</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb4" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Requestion</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb5" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Prompt</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb6" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Hint</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb7" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Splice</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb8" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Keyword</RadioButton>
+        </DockPanel>
+
+        <DockPanel x:Name="b" Margin="130,183,109,243">
+            <RadioButton GroupName="UtteranceSelect" Name="rebound" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="True" Checked="RefreshUtteranceList">Rebound</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="answer" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Answer</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="pleased" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Pleased</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="help" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Help</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="backoff" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Back Off</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="technical" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Technical</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="smalltalk" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Small Talk</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="stall" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Stalling</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="unable" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Unable</RadioButton>
+        </DockPanel>
+        
+        <Grid x:Name="ScriptGrid" HorizontalAlignment="Left" Height="178" Margin="56,262,0,0" VerticalAlignment="Top" Width="720"/>
+
+        <DockPanel Height="32" Margin="110,454,109,10" >
+            <Button Template="{StaticResource AutoButton}" Name="TickImage"  Click="AutoSelectUtterance"  Width="300" >Automatic</Button>
+            <Button Template="{StaticResource SelectButton}" Name="TickImage2" Click="ManualSelectUtterance" Width="300" >Manual</Button>
+        </DockPanel>
+
+
+
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<entry key="Type">UrlSquare</entry>
+<entry key="OutputLocation">C:\Users\axj100\Documents\spring-workspace\EmoteMaps\src\main\webapp\resources\tiles</entry>
+<entry key="PasteUrl">http://www.openstreetmap.org/?lat=38.705864&amp;lon=-9.145788&amp;zoom=16&amp;layers=B000TTF</entry>
+<entry key="TileServer">http://otile1.mqcdn.com/tiles/1.0.0/map</entry>
+<entry key="OutputZoomLevel">17</entry>
+<entry key="Radius">5</entry>
+</properties>

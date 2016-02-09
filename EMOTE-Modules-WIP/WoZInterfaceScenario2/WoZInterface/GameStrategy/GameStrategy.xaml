@@ -1,0 +1,80 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Common="clr-namespace:WOZInterface.GameStrategy.Common" xmlns:local="clr-namespace:WOZInterface.GameStrategy" x:Class="WOZInterface.GameStrategy.GameStrategy" 
+             Style="{StaticResource UserControlStyle}"
+             mc:Ignorable="d" Height="270" Width="869">
+    <UserControl.DataContext>
+        <local:GameStrategyModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Image Source="pack://application:,,,/WOZInterface;component/images/Enercities/EnvironmentScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="10,6,0,0" />
+        <Common:AIStrategy x:Name="strEnvironmentalist" HorizontalAlignment="Left" Margin="10,31,0,0" Height="231" VerticalAlignment="Top"/>
+        <Common:AIStrategy x:Name="strEconomist" HorizontalAlignment="Left" Margin="191,31,0,0" VerticalAlignment="Top"/>
+        <Common:AIStrategy x:Name="strMayor" HorizontalAlignment="Left" Margin="390,31,0,0" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="35,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"><Run Text="Environmentalist"/></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/EconomyScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="191,6,0,0" />
+        <TextBlock HorizontalAlignment="Left" Margin="216,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"><Run Language="it-it" Text="Economist"/></TextBlock>
+        <Image Source="/WOZInterface;component/images/Enercities/WellbeingScore.png" HorizontalAlignment="Left" Height="20" Width="20" VerticalAlignment="Top" Margin="390,6,0,0" />
+        <TextBlock HorizontalAlignment="Left" Margin="415,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="151"><Run Language="it-it" Text="Mayor"/></TextBlock>
+        <Button x:Name="btnPlay" Content="Play" HorizontalAlignment="Right" Margin="0,155,76,0" VerticalAlignment="Top" Width="60" Height="49" Click="btnPlay_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding PlayButtonActive}" Value="True">
+                            <Setter Property="Button.IsEnabled" Value="True" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlayButtonActive}" Value="False">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnSkip" Content="Skip" HorizontalAlignment="Right" Margin="0,155,10,0" VerticalAlignment="Top" Width="60" Height="49" Click="btnSkip_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding PlayButtonActive}" Value="True">
+                            <Setter Property="Button.IsEnabled" Value="True" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding PlayButtonActive}" Value="False">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnRecalculate" HorizontalAlignment="Right" Margin="0,213,10,0" VerticalAlignment="Top" Width="126" Height="49" Click="btnRecalculate_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsRecalculating}" Value="True">
+                            <Setter Property="Button.Content" Value="..calculating.." />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsRecalculating}" Value="False">
+                            <Setter Property="Button.Content" Value="Recalculate Actions" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RecalculateButtonActive}" Value="True">
+                            <Setter Property="Button.Background" Value="Orange" />
+                            <Setter Property="Button.IsEnabled" Value="True" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RecalculateButtonActive}" Value="False">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <ListBox x:Name="lstBestActions" Height="119" Margin="571,31,9,0" VerticalAlignment="Top" ItemsSource="{Binding BestActions}"/>
+        <TextBlock HorizontalAlignment="Left" Margin="571,6,0,0" TextWrapping="Wrap" Text="Best Actions Planned" VerticalAlignment="Top" Width="127"/>
+        <Button x:Name="btnImitateEnv" Content="-&gt;" HorizontalAlignment="Left" Margin="136,6,0,0" VerticalAlignment="Top" Width="50" Click="btnImitateEnv_Click"/>
+        <Button x:Name="btnImitateEco" Content="-&gt;" HorizontalAlignment="Left" Margin="317,6,0,0" VerticalAlignment="Top" Width="50" Click="btnImitateEco_Click"/>
+        <Button x:Name="btnPanic" HorizontalAlignment="Left" Margin="571,213,0,0" VerticalAlignment="Top" Width="54" Height="43" Background="Transparent" Click="btnPanic_Click" >
+            <Image Source="/WOZInterface;component/images/generic/panic.png" />
+        </Button>
+
+    </Grid>
+</UserControl>

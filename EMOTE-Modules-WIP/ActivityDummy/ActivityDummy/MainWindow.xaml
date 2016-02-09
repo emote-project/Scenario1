@@ -1,0 +1,93 @@
+﻿<Window x:Class="ActivityDummy.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Activity Dummy" Height="250" Width="525" Closing="OnFormClose" ResizeMode="NoResize">
+    <Grid>
+        <Grid Margin="10,10,353,22">
+            
+            <Label Content="LearnerID:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="1,9,0,0"/>
+            <Label Content="StepID:" HorizontalAlignment="Left" Margin="1,33,0,0" VerticalAlignment="Top"/>
+            <Label Content="ActivityID:" HorizontalAlignment="Left" Margin="0,59,0,0" VerticalAlignment="Top"/>
+            <Label Content="ScenarioID:" HorizontalAlignment="Left" Margin="0,84,0,0" VerticalAlignment="Top"/>
+            <Label Content="SessionID:" HorizontalAlignment="Left" Margin="1,109,0,0" VerticalAlignment="Top"/>
+            <Label Content="MapEventID:" HorizontalAlignment="Left" Margin="0,134,0,0" VerticalAlignment="Top"/>
+            
+            
+            <TextBox Name="learnerID" HorizontalAlignment="Left" Height="23" Margin="90,13,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+            <TextBox Name="stepID" HorizontalAlignment="Left" Height="23" Margin="90,38,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+            <TextBox Name="activityID" HorizontalAlignment="Left" Height="23" Margin="90,63,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+            <TextBox Name="scenarioID" HorizontalAlignment="Left" Height="23" Margin="90,88,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+            <TextBox Name="sessionID" HorizontalAlignment="Left" Height="23" Margin="90,113,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+            <TextBox Name="mapEventID" HorizontalAlignment="Left" Height="23" Margin="90,138,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="35"/>
+
+        </Grid>
+        
+        
+        <TabControl HorizontalAlignment="Left" Height="145" Margin="166,21,0,0" VerticalAlignment="Top" Width="330">
+            <TabItem Header="Competency A">
+                <Grid>
+                    <Grid Margin="10,20,162,10">
+                        <Label Content="Name: " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Distance" HorizontalAlignment="Left" Margin="54,0,0,0" VerticalAlignment="Top"/>
+
+                        <Label Content="Correct:" HorizontalAlignment="Left" Margin="0,24,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Name="distanceCorrect" Content="Yes" GroupName="distCorrect" Margin="54,31,43,41" IsChecked="True" Checked="Distance_Checked"/>
+                        <RadioButton Name="distanceInCorrect" Content="No" GroupName="distCorrect" Margin="99,31,0,41" Checked="Distance_Checked"/>
+
+                        <Label Content="Value:" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top"/>
+                        <TextBox Name="distanceScore" HorizontalAlignment="Left" Height="23" Margin="54,54,0,0" TextWrapping="Wrap" Text="0.5" VerticalAlignment="Top" Width="31"/>
+
+                    </Grid>
+                </Grid>
+
+
+            </TabItem>
+            <TabItem Header="Competency B">
+                <Grid>
+                    <Grid Margin="10,20,162,10">
+                        <Label Content="Name: " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Direction" HorizontalAlignment="Left" Margin="54,0,0,0" VerticalAlignment="Top"/>
+
+                        <Label Content="Correct:" HorizontalAlignment="Left" Margin="0,24,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Content="Yes" GroupName="dirCorrect" Margin="54,31,43,41" IsChecked="True"/>
+                        <RadioButton Content="No" GroupName="dirCorrect" Margin="99,31,0,41"/>
+
+                        <Label Content="Value:" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top"/>
+                        <TextBox Name="directionScore" HorizontalAlignment="Left" Height="23" Margin="54,54,0,0" TextWrapping="Wrap" Text="0.5" VerticalAlignment="Top" Width="31"/>
+
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Competency C">
+                <Grid>
+                    <Grid Margin="10,20,162,10">
+                        <Label Content="Name: " HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top"/>
+                        <Label Content="Symbol" HorizontalAlignment="Left" Margin="54,0,0,0" VerticalAlignment="Top"/>
+
+                        <Label Content="Correct:" HorizontalAlignment="Left" Margin="0,24,0,0" VerticalAlignment="Top"/>
+                        <RadioButton Content="Yes" GroupName="sCorrect" Margin="54,31,43,41" IsChecked="True"/>
+                        <RadioButton Content="No" GroupName="sCorrect" Margin="99,31,0,41"/>
+
+                        <Label Content="Value:" HorizontalAlignment="Left" Margin="0,51,0,0" VerticalAlignment="Top"/>
+                        <TextBox Name="symbolScore" HorizontalAlignment="Left" Height="23" Margin="54,54,0,0" TextWrapping="Wrap" Text="0.5" VerticalAlignment="Top" Width="31"/>
+                        
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+
+
+
+        <ComboBox Name="reasonForUpdate" HorizontalAlignment="Left" Margin="187,175,0,0" VerticalAlignment="Top" Width="120" SelectedIndex="0">
+            <ComboBoxItem Name="answerattempt" Content="AnswerAttempt" Selected="ReasonIsAnswerAttempt"/>
+            <ComboBoxItem Name="toolUse" Content="ToolUse" Selected="ReasonIsToolUse"/>
+        </ComboBox>
+
+        <Button Content="Send Activity Update" HorizontalAlignment="Left" Margin="360,175,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="PublishButtonClick"/>
+        
+        
+        
+        
+    </Grid>
+</Window>

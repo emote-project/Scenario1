@@ -1,0 +1,268 @@
+﻿<UserControl x:Class="WOZInterface.UtteranceControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="690" Background="#FF343434" BorderBrush="#FF232323" BorderThickness="2">
+
+
+    <!--<CheckBox Name="chkbox1" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource DistanceCheckBox}" />
+            <CheckBox Name="chkbox2" IsChecked="False" Click="RefreshUtteranceList" Template="{StaticResource DirectionCheckBox}" />
+            <CheckBox Name="chkbox3" IsChecked="False" Click="RefreshUtteranceList" Template="{StaticResource SymbolCheckBox}" />-->
+
+    <UserControl.Resources>
+
+        <Image Source="pack://application:,,,/Images/Feedback/ExcellentOn.png" x:Key="ExcellentOn"  Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/ExcellentOff.png" x:Key="ExcellentOff" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/ExcellentOver.png" x:Key="ExcellentOver"  Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/GoodOn.png" x:Key="GoodOn" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/GoodOff.png" x:Key="GoodOff" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/GoodOver.png" x:Key="GoodOver" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NeutralOn.png" x:Key="NeutralOn" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NeutralOff.png" x:Key="NeutralOff" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NeutralOver.png" x:Key="NeutralOver" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/AlmostOn.png" x:Key="AlmostOn" Margin="0,593,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/AlmostOff.png" x:Key="AlmostOff" Margin="0,593,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/AlmostOver.png" x:Key="AlmostOver" Margin="0,593,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NegativeOn.png" x:Key="NegativeOn" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NegativeOff.png" x:Key="NegativeOff" Margin="0,592,0,0"/>
+        <Image Source="pack://application:,,,/Images/Feedback/NegativeOver.png" x:Key="NegativeOver" Margin="0,592,0,0"/>
+
+
+
+        <ControlTemplate x:Key="FeedbackRadioButton" TargetType="RadioButton">
+            <Grid>
+                <Image Width="64" Height="64" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                <ContentPresenter/>
+            </Grid>
+
+            <!-- Excellent Feedback -->
+            <ControlTemplate.Triggers>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="ExcellentFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ExcellentOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="ExcellentFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ExcellentOff}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="ExcellentFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource ExcellentOver}"/>
+                </MultiDataTrigger>
+
+
+                <!-- Good Feedback -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GoodFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GoodOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GoodFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GoodOff}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="GoodFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource GoodOver}"/>
+                </MultiDataTrigger>
+
+                <!-- Neutral Feedback -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NeutralFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NeutralOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NeutralFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NeutralOff}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NeutralFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NeutralOver}"/>
+                </MultiDataTrigger>
+
+                <!-- Almost Feedback -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="AlmostFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource AlmostOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="AlmostFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource AlmostOff}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="AlmostFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource AlmostOver}"/>
+                </MultiDataTrigger>
+
+                <!-- Negative Feedback -->
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NegativeFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NegativeOn}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsChecked}" Value="False" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NegativeFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NegativeOff}"/>
+                </MultiDataTrigger>
+
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=IsMouseOver}" Value="True" />
+                        <Condition Binding="{Binding RelativeSource={RelativeSource self}, Path=Name}" Value="NegativeFeedback" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="Content" Value="{DynamicResource NegativeOver}"/>
+                </MultiDataTrigger>
+
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+    </UserControl.Resources>
+
+
+    <!-- GRID -->
+
+    <Grid>
+
+        <TextBox x:Name="freespeechtext" KeyDown="OnKeyDownHandler" FontSize="14" VerticalContentAlignment="Center" HorizontalAlignment="Left" Height="34" Margin="55,480,0,482" TextWrapping="Wrap" Foreground="White" Background="#FF343434" BorderBrush="White" Text="" VerticalAlignment="Center" Width="498" />
+        <Button Content="Say" HorizontalAlignment="Left" Height="32"  VerticalAlignment="Top" Width="66" Click="SayHandler" Margin="571,480,0,0"/>
+
+
+        <DockPanel Margin="128,10,0,808" HorizontalAlignment="Left" Width="456">
+            <Button Template="{StaticResource SmallSkillClearButton}" Name="ClearSkill"  Click="ClearAllSkills"  Width="32" Height="32"></Button>
+            <CheckBox Name="distance" Height="170" IsChecked="False"  Tag="wait" Uid="Not Required!" Click="RefreshUtteranceList"  HorizontalAlignment="Center" Template="{StaticResource CustomDistanceFB}" >Waiting</CheckBox>
+            <CheckBox Name="direction" Height="170" IsChecked="False"  Tag="wait" Uid="Not Required!" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource CustomDirectionFB}" >Waiting</CheckBox>
+            <CheckBox Name="symbol" Height="170" IsChecked="False"  Tag="wait" Uid="Not Required!" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource CustomSymbolFB}" >Waiting</CheckBox>
+            <Button Template="{StaticResource SmallSkillAllButton}" Name="FillSkill"  Click="SelectAllSkills"  Width="32" Height="32"></Button>
+        </DockPanel>
+
+        <DockPanel  HorizontalAlignment="Left" Width="365" Margin="169,-210,0,538">
+
+            <RadioButton GroupName="UtteranceSelect" Name="ExcellentFeedback" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource FeedbackRadioButton}" Width="72" />
+            <RadioButton GroupName="UtteranceSelect" Name="GoodFeedback" IsChecked="True" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource FeedbackRadioButton}"  Width="72" />
+            <RadioButton GroupName="UtteranceSelect" Name="NeutralFeedback" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource FeedbackRadioButton}"  Width="72" />
+            <RadioButton GroupName="UtteranceSelect" Name="AlmostFeedback" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource FeedbackRadioButton}"  Width="72" />
+            <RadioButton GroupName="UtteranceSelect" Name="NegativeFeedback" IsChecked="False" Click="RefreshUtteranceList" HorizontalAlignment="Center" Template="{StaticResource FeedbackRadioButton}"  Width="72" />
+
+        </DockPanel>
+
+
+
+
+
+
+
+
+
+
+
+
+        <DockPanel x:Name="a" Margin="94,215,0,713" HorizontalAlignment="Left" Width="511">
+
+            <RadioButton GroupName="UtteranceSelect" Name="rb1" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Pump</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb2" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Elaborate</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb3" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Summarise</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb4" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Requestion</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb5" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Prompt</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb6" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Hint</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb7" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Splice</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="rb8" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Keyword</RadioButton>
+        </DockPanel>
+
+        <DockPanel x:Name="b" Margin="25,288,0,634" HorizontalAlignment="Left" Width="640">
+            <RadioButton GroupName="UtteranceSelect" Name="rebound" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Rebound</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="answer" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Answer</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="pleased" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Pleased</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="help" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Help</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="backoff" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Back Off</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="technical" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Technical</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="smalltalk" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Small Talk</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="stall" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Stalling</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="unable" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Unable</RadioButton>
+            <RadioButton GroupName="UtteranceSelect" Name="guidance" Width="64" Height="64" Template="{StaticResource CustomRadioButton}" IsChecked="False" Checked="RefreshUtteranceList">Guidance</RadioButton>
+        </DockPanel>
+
+        <Grid x:Name="ScriptGrid" HorizontalAlignment="Left" Height="381" Margin="21,532,0,0" VerticalAlignment="Top" Width="655" Background="#FF343434"/>
+
+        <DockPanel Margin="535,937,81,10" >
+            <Button Template="{StaticResource AutoButton}" Name="TickImage"  Click="AutoSelectUtterance"  Width="116" >Automatic</Button>
+            <!--<Button Template="{StaticResource SelectButton}" Name="TickImage2" Click="ManualSelectUtterance" Width="300" >Manual</Button>-->
+        </DockPanel>
+
+        <Grid Margin="39,913,358,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="11*"/>
+                <RowDefinition Height="62*"/>
+            </Grid.RowDefinitions>
+            <Button  Template="{StaticResource SmallSkillAllButton}" FontSize="8" HorizontalAlignment="Left" Margin="169,25,0,0" VerticalAlignment="Top" Width="75" Click="DistanceOpen" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillClearButton}" FontSize="8" HorizontalAlignment="Left" Margin="207,25,0,0" VerticalAlignment="Top" Width="75" Click="DistanceClose" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillAllButton}" FontSize="8" HorizontalAlignment="Left" Margin="89,25,0,0" VerticalAlignment="Top" Width="75" Click="DirectionOpen" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillClearButton}" FontSize="8" HorizontalAlignment="Left" Margin="126,25,0,0" VerticalAlignment="Top" Width="75" Click="DirectionClose" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillAllButton}" FontSize="8" HorizontalAlignment="Left" Margin="-4,25,0,0" VerticalAlignment="Top" Width="75" Click="SymbolOpen" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillClearButton}" FontSize="8" HorizontalAlignment="Left" Margin="33,25,0,0" VerticalAlignment="Top" Width="75" Click="SymbolClose" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillAllButton}" FontSize="8" HorizontalAlignment="Left" Margin="264,25,-50,0" VerticalAlignment="Top" Width="75" Click="ScrapBookOpen" Grid.Row="1"/>
+            <Button  Template="{StaticResource SmallSkillClearButton}" FontSize="8" HorizontalAlignment="Left" Margin="301,25,-87,0" VerticalAlignment="Top" Width="75" Click="ScrapBookClose" Grid.Row="1"/>
+
+            <Label  Content="Ruler" HorizontalAlignment="Left"  HorizontalContentAlignment="Center" Margin="189,10,0,0" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Width="75" Grid.RowSpan="2"/>
+            <Label  Content="Compass" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="108,10,0,0" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Width="75" Grid.RowSpan="2"/>
+            <Label  Content="Map Key" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="14,10,0,0" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Width="75" Grid.RowSpan="2"/>
+            <Label  Content="Scrap Book" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Margin="281,10,0,0" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        </Grid>
+
+
+
+    </Grid>
+
+
+</UserControl>

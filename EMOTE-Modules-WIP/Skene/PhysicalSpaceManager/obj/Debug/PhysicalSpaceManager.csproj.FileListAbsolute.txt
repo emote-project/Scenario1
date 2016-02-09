@@ -1,0 +1,4 @@
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Debug\PhysicalSpaceManager.dll
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Debug\PhysicalSpaceManager.pdb
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\obj\Debug\PhysicalSpaceManager.dll
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\obj\Debug\PhysicalSpaceManager.pdb
