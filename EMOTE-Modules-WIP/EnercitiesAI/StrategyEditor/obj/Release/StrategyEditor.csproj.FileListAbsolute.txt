@@ -1,5 +1,0 @@
-D:\EMOTE-Modules-WIP\EnercitiesAI\StrategyEditor\obj\Release\StrategyEditor.csprojResolveAssemblyReference.cache
-D:\EMOTE-Modules-WIP\EnercitiesAI\StrategyEditor\obj\Release\StrategyEditor.MainForm.resources
-D:\EMOTE-Modules-WIP\EnercitiesAI\StrategyEditor\obj\Release\StrategyEditor.Properties.Resources.resources
-D:\EMOTE-Modules-WIP\EnercitiesAI\StrategyEditor\obj\Release\StrategyEditor.StrategyAdjustmentControl.resources
-D:\EMOTE-Modules-WIP\EnercitiesAI\StrategyEditor\obj\Release\StrategyEditor.csproj.GenerateResource.Cache
