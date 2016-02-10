@@ -10,7 +10,7 @@ Skene
 MapInterface
 WoZInterface
 
-Fotis what are the 
+
 
 Deploy the relevant code to the robot. This is NAO Bridges. 
 Ensure the robot has these behaviours...
@@ -37,8 +37,8 @@ Check the debug properties of the VS project to see if its adding a character na
 Change it to your character's name.
 This is used because Thalamus works across the local network - and this way several people can be working with thalamus at the same time.
 
-For example, I create a character called Tiago, eugenio creates one callex Eux, so I tell my modules to connect to the Tiago character.
-If you don't specify which character it should connect to, the client connects to the first one if gets, and that sometimes leads to for ex, me launching a client but I don't see it in my Thalamus, and suddenly Eugenio says "hey you have a client connected to my Thalamus!"
+For example, I create a character called NAO, EMYS creates one callex Eux, so I tell my modules to connect to the NAO character.
+If you don't specify which character it should connect to, the client connects to the first one if gets, and that sometimes leads to for ex, me launching a client but I don't see it in my Thalamus, and suddenly EMYS says "hey you have a client connected to my Thalamus!"
 
 Second, you can also launch ThalamusStandalone with parameters.
 If it is just a word, then it will automatically create a character using that word as the name. It's really usefull so you don't always have to go clicking around everythime you launch things.
@@ -50,9 +50,9 @@ You can also have the Standalone load a scenario when launched, just add "-s" to
 
 Some examples to explain:
 (etc..)\ThalamusStandalone.exe -> Launches thalamus and does nothing else
-(etc..)\ThalamusStandalone.exe Tiago -> Launches thalamus and automatically creates a character called Tiago
+(etc..)\ThalamusStandalone.exe NAO -> Launches thalamus and automatically creates a character called NAO
 (etc..)\Skene.exe -> Launches Skene and connects to the first Thalamus character it gets (if you are working alone in the network then this works fine)
-(etc..)\Skene.exe Tiago -> Launches Skene but only connects it to a Thalamus character named Tiago (highly recommended if you are sharing the network with other people using thalamus)
+(etc..)\Skene.exe NAO -> Launches Skene but only connects it to a Thalamus character named NAO (highly recommended if you are sharing the network with other people using thalamus)
 
 Assuming you have saved a scenario called EmoteWoz1:
 (etc..)\ThalamusStandalone.exe EmoteWoz1 -s -> Launches Thalamus and load the scenario called EmoteWoz1, which automatically launches all the clients you saved in it.
