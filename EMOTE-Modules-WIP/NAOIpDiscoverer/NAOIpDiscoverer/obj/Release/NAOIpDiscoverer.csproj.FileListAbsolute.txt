@@ -1,9 +1,0 @@
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\NAOIpDiscoverer.exe
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\NAOIpDiscoverer.pdb
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\Zeroconf.dll
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\Zeroconf.Platform.dll
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\Zeroconf.xml
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\bin\Release\Zeroconf.Platform.xml
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\obj\Release\NAOIpDiscoverer.csprojResolveAssemblyReference.cache
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\obj\Release\NAOIpDiscoverer.exe
-D:\EMOTE-Modules-WIP\NaoIpDiscoverer\NAOIpDiscoverer\obj\Release\NAOIpDiscoverer.pdb
