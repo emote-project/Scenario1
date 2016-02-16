@@ -1,0 +1,809 @@
+<dialogueScript>
+	<dialogueState>
+		<var name="affect" type="symbolic" value="happy" range="sad,happy"/>
+		<var name="systemCommunicativeFunction" type="symbolic" range="null,presentTask,positiveFeedback,neutralFeedback"/>
+		<var name="systemGreeted" type="boolean" value="false"/>
+		<var name="taskStatus" type="symbolic" value="yet-to-start" range="yet-to-start,ongoing,finished,closed"/>
+		<var name="currentStepId" type="string"/>
+		<var name="delayedResponse" type="boolean"/>
+		<var name="respondCorrectly" type="boolean"/>
+		<var name="directionCorrect" type="boolean" value="false"/>
+		<var name="distanceCorrect" type="boolean" value="false"/>
+		<var name="symbolCorrect" type="boolean" value="false"/>
+		<var name="toolCorrect" type="boolean" value="false"/>
+		<var name="useDirectionTool" type="boolean" value="false"/>
+		<var name="useDistanceTool" type="boolean" value="false"/>
+		<var name="useSymbolTool" type="boolean" value="false"/>
+		<var name="directionSkillRequired" type="boolean" value="false"/>
+		<var name="distanceSkillRequired" type="boolean" value="false"/>
+		<var name="symbolSkillRequired" type="boolean" value="false"/>
+		<var name="toolSkillRequired" type="boolean" value="false"/>
+		<var name="skillRequired" type="boolean" value="false"/>
+		<var name="actualDirection" type="string" />
+		<var name="actualDistance" type="number" />
+		<var name="actualSymbol" type="string" />
+		<var name="actualTool" type="string" />
+		<var name="skillLevelDirection" type="symbol" range="low,medium,high"/>
+		<var name="skillLevelDistance" type="symbol" range="low,medium,high"/>
+		<var name="skillLevelSymbol" type="symbol" range="low,medium,high"/>
+		
+	</dialogueState>
+	<input>
+		<var name="communicativeFunction" type="symbolic" />
+		<var name="directionSkillRequired" type="boolean" />
+		<var name="distanceSkillRequired" type="boolean" />
+		<var name="symbolSkillRequired" type="boolean" />
+		<var name="toolSkillRequired" type="boolean" />
+		<var name="correctDirection" type="string" />
+		<var name="correctDistance" type="number" />
+		<var name="correctSymbol" type="string" />
+		<var name="correctTool" type="string" />
+		<var name="currentStepId" type="string" />
+	</input>
+	<output>
+	</output>
+	
+	<!-- STATE UPDATE RULES -->
+	
+	<stateUpdateRules>
+		<rule comment="copy input variable">
+			<precondition/>
+			<action>
+				<assign>
+					<assignee var="systemCommunicativeFunction" domain="dstate" />
+					<assigner var="communicativeFunction" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="currentStepId" domain="dstate" />
+					<assigner var="currentStepId" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="directionSkillRequired" domain="dstate" />
+					<assigner var="directionSkillRequired" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="distanceSkillRequired" domain="dstate" />
+					<assigner var="distanceSkillRequired" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="symbolSkillRequired" domain="dstate" />
+					<assigner var="symbolSkillRequired" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="toolSkillRequired" domain="dstate" />
+					<assigner var="toolSkillRequired" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="actualSymbol" domain="dstate" />
+					<assigner var="correctSymbol" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="actualDirection" domain="dstate" />
+					<assigner var="correctDirection" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="actualDistance" domain="dstate" />
+					<assigner var="correctDistance" domain="input" />
+				</assign>
+				<assign>
+					<assignee var="actualTool" domain="dstate" />
+					<assigner var="correctTool" domain="input" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="is there any task ongoing">
+			<precondition>
+			    <equals>
+					<op1 var="systemCommunicativeFunction"  domain="dstate"/>
+					<op2 value="presentTask" />
+				</equals>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="taskStatus" domain="dstate" />
+					<assigner value="ongoing" />
+				</assign>
+				<assign>
+					<assignee var="respondCorrectly" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="directionCorrect" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="distanceCorrect" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="symbolCorrect" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="toolCorrect" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="useDirectionTool" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="useDistanceTool" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+				<assign>
+					<assignee var="useSymbolTool" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="is there any task ongoing part2">
+			<precondition>
+			    <equals>
+					<op1 var="systemCommunicativeFunction"  domain="dstate"/>
+					<op2 value="positiveFeedback" />
+				</equals>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="taskStatus" domain="dstate" />
+					<assigner value="finished" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="is any skill required at all?? 1">
+		    <precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<!-- none of the skills is required -->
+					<equals>
+						<op1 var="directionSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="distanceSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="symbolSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="toolSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="skillRequired" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="is any skill required at all?? 2">
+		    <precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<!-- any of the skills is required -->
+					<or>
+						<equals>
+							<op1 var="directionSkillRequired"  domain="dstate"/>
+							<op2 value="true"/>
+						</equals>
+						<equals>
+							<op1 var="distanceSkillRequired"  domain="dstate"/>
+							<op2 value="true"/>
+						</equals>
+						<equals>
+							<op1 var="symbolSkillRequired"  domain="dstate"/>
+							<op2 value="true"/>
+						</equals>
+						<equals>
+							<op1 var="toolSkillRequired"  domain="dstate"/>
+							<op2 value="true"/>
+						</equals>
+					</or>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="skillRequired" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine skill level">
+			<precondition>
+			    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+				</equals>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="skillLevelDirection" domain="dstate" />
+					<assigner function="randomChoice" range="low,high,medium"/>
+				</assign>
+				<assign>
+					<assignee var="skillLevelSymbol" domain="dstate" />
+					<assigner function="randomChoice" range="low,high,medium"/>
+				</assign>
+				<assign>
+					<assignee var="skillLevelDistance" domain="dstate" />
+					<assigner function="randomChoice" range="low,high,medium"/>
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond tool correctly 0">
+			<precondition>
+			    <equals>
+					<op1 var="systemCommunicativeFunction"  domain="dstate"/>
+					<op2 value="splice:tool" />
+				</equals>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="toolCorrect" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond tool correctly 1">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="toolSkillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="toolCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="toolCorrect" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond tool correctly 2">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="toolSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="toolCorrect" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond direction correctly 1">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="directionSkillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="directionCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="directionCorrect" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond direction correctly 2">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="directionSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="directionCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="directionCorrect" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use direction tool correctly 1">
+		    <precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="directionCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="useDirectionTool"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useDirectionTool" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use direction tool correctly 2">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="directionCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useDirectionTool" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond distance correctly 1">
+		    <precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="distanceSkillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="distanceCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="distanceCorrect" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond distance correctly 2">
+		    <precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="distanceSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="distanceCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="distanceCorrect" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use distance tool correctly 1">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="distanceCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="useDistanceTool"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useDistanceTool" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use distance tool correctly 2">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="distanceCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useDistanceTool" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond symbol correctly">
+		    <!-- if there is an ongoing task, symbol skill is needed and has not previously been set to true or false -->
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="symbolSkillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="symbolCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="symbolCorrect" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond symbol correctly 2">
+		    <!-- if there is an ongoing task, symbol skill is needed and has not previously been set to true or false -->
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="symbolSkillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="symbolCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="symbolCorrect" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use symbol tool correctly 1">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="symbolCorrect"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="useSymbolTool"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useSymbolTool" domain="dstate" />
+					<assigner function="randomBoolean" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine to use symbol tool correctly 2">
+			<precondition>
+			    <and>
+				    <equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="symbolCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="useSymbolTool" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		
+		<rule comment="determine respond correctly 0">
+		    <precondition>
+		        <and>
+			        <equals>
+						<op1 var="skillRequired"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals> 
+			   </and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="respondCorrectly" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>    
+		<rule comment="determine respond correctly 1">
+			<precondition>
+			    <and>
+			        <equals>
+						<op1 var="skillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals> 
+				    <equals>
+						<op1 var="toolCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="symbolCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="directionCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+					<equals>
+						<op1 var="distanceCorrect"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="respondCorrectly" domain="dstate" />
+					<assigner value="true" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="determine respond correctly 2">
+			<precondition>
+			    <and>
+			        <equals>
+						<op1 var="skillRequired"  domain="dstate"/>
+						<op2 value="true"/>
+					</equals>
+				    <or>
+				        <equals>
+							<op1 var="symbolCorrect"  domain="dstate"/>
+							<op2 value="false"/>
+						</equals>
+						<equals>
+							<op1 var="directionCorrect"  domain="dstate"/>
+							<op2 value="false"/>
+						</equals>
+						<equals>
+							<op1 var="distanceCorrect"  domain="dstate"/>
+							<op2 value="false"/>
+						</equals>
+						<equals>
+							<op1 var="toolCorrect"  domain="dstate"/>
+							<op2 value="false"/>
+						</equals>
+					</or>
+				</and>
+			</precondition>
+			<action>
+				<assign>
+					<assignee var="respondCorrectly" domain="dstate" />
+					<assigner value="false" />
+				</assign>
+			</action>
+		</rule>
+		<rule comment="should the user take some time to respond">
+		   	<precondition>
+		    	<equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+		    </precondition>
+		    <action>
+				<assign>
+					<assignee var="delayedResponse" domain="dstate" />
+					<assigner function="randomBoolean" />
+					<!-- assigner value="false" /-->
+				</assign>
+			</action>
+		</rule>
+	</stateUpdateRules>
+	
+	<!-- ACTION SELECTION RULES -->
+	<actionSelectionRules>
+	    <strategy id="main">
+		    <rule comment="responding to system task">
+				<precondition>
+				    <and>
+						<equals>
+							<op1 var="taskStatus"  domain="dstate"/>
+							<op2 value="ongoing"/>
+						</equals>
+						<equals>
+							<op1 var="delayedResponse"  domain="dstate"/>
+							<op2 value="true"/>
+						</equals>
+					</and>
+				</precondition>
+				<action>
+				    <assign>
+				        <assignee var="fromModule" domain="output"/>
+				        <assigner value="hub" />
+				    </assign>
+				    <assign>
+				        <assignee var="time-out" domain="output"/>
+				        <assigner value="true" />
+				    </assign>
+				</action>
+			</rule>
+			<rule comment="responding to system task">
+				<precondition>
+					<and>
+						<equals>
+							<op1 var="taskStatus"  domain="dstate"/>
+							<op2 value="ongoing"/>
+						</equals>
+					</and>
+				</precondition>
+				<action>
+				    <assign>
+				        <assignee var="fromModule" domain="output"/>
+				        <assigner value="user" />
+				    </assign>
+					<assign>
+						<assignee var="communicativeFunction" domain="output"/>
+						<assigner value="answerTask"/>
+					</assign>
+					<assign>
+						<assignee var="currentStepId" domain="output"/>
+						<assigner var="currentStepId" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="responseCorrect" domain="output"/>
+						<assigner var="respondCorrectly" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="directionCorrect" domain="output"/>
+						<assigner var="directionCorrect" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="distanceCorrect" domain="output"/>
+						<assigner var="distanceCorrect" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="symbolCorrect" domain="output"/>
+						<assigner var="symbolCorrect" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="toolCorrect" domain="output"/>
+						<assigner var="toolCorrect" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="dirToolUsed" domain="output"/>
+						<assigner var="useDirectionTool" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="disToolUsed" domain="output"/>
+						<assigner var="useDistanceTool" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="symToolUsed" domain="output"/>
+						<assigner var="useSymbolTool" domain="dstate"/>
+					</assign>
+					 <assign>
+						<assignee var="actualTool" domain="output"/>
+						<assigner var="actualTool" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="actualSymbol" domain="output"/>
+						<assigner var="actualSymbol" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="actualDirection" domain="output"/>
+						<assigner var="actualDirection" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="actualDistance" domain="output"/>
+						<assigner var="actualDistance" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="skillLevelDirection" domain="output"/>
+						<assigner var="skillLevelDirection" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="skillLevelDistance" domain="output"/>
+						<assigner var="skillLevelDistance" domain="dstate"/>
+					</assign>
+					<assign>
+						<assignee var="skillLevelSymbol" domain="output"/>
+						<assigner var="skillLevelSymbol" domain="dstate"/>
+					</assign>
+				</action>
+			</rule>
+			<rule comment="task finished">
+				<precondition>
+					<and>
+						<equals>
+							<op1 var="taskStatus"  domain="dstate"/>
+							<op2 value="finished"/>
+						</equals>
+					</and>
+				</precondition>
+				<action>
+				    <assign>
+				        <assignee var="fromModule" domain="output"/>
+				        <assigner value="user" />
+				    </assign>
+				</action>
+			</rule>
+		</strategy>
+	</actionSelectionRules>
+</dialogueScript>

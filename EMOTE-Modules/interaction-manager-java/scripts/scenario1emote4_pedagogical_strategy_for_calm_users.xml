@@ -1,0 +1,430 @@
+<strategy id="pedagogical_strategy_for_calm_users">
+    
+    <rule id="respond_to_user_interrupted_positiveFeedback_calm_users" comment="respond to user response - positive">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</equals>
+			</and>				
+        </precondition>
+        <actionAnd>
+            <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="interrupted" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="positiveFeedback" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="positiveFeedback" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="responseRequired" domain="output"/>
+					<assigner value="false" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        
+        </actionAnd>
+    </rule>
+    <rule id="respond_to_user_positiveFeedback_calm_users" comment="respond to user response - positive">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<not-equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</not-equals>
+			</and>				
+        </precondition>
+        <actionOr>
+        	<action p="0.3">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="acknowledgeEmpathy:calmSuccessfulTaskCompletion" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="acknowledgeEmpathy:calmSuccessfulTaskCompletion" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="responseRequired" domain="output"/>
+					<assigner value="false" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+            <action p="0.7">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="positiveFeedback" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="positiveFeedback" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="responseRequired" domain="output"/>
+					<assigner value="false" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        
+        </actionOr>
+    </rule>
+    
+    <rule id="respond_to_user_requestion_calm_users" comment="respond to user response with requestion when answerAttempt are less than 2 times">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<lt>
+					<op1 var="currentStepAnswerAttemptCount"  domain="dstate"/>
+					<op2 value="1.0" type="number"/>
+				</lt>
+				<not-equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</not-equals>
+			</and>				
+        </precondition>
+        <actionOr>
+	        <action p="0.2">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="randomClicks:trial" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="randomClicks:trial" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+            <action p="0.2">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="keyword:distanceDirectionSymbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDirection" domain="output"/>
+					<assigner var="correctDirection" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDistance" domain="output"/>
+					<assigner var="correctDistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctSymbol" domain="output"/>
+					<assigner var="correctSymbol" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        <action p="0.2">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="pump:distanceDirectionSymbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDirection" domain="output"/>
+					<assigner var="correctDirection" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDistance" domain="output"/>
+					<assigner var="correctDistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctSymbol" domain="output"/>
+					<assigner var="correctSymbol" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        <action p="0.2">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="requestion:distanceDirectionSymbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDirection" domain="output"/>
+					<assigner var="correctDirection" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctDistance" domain="output"/>
+					<assigner var="correctDistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctSymbol" domain="output"/>
+					<assigner var="correctSymbol" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        <action p="0.2">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="acknowledgeEmpathy:calmUnsuccessfulAttempt" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="acknowledgeEmpathy:calmUnsuccessfulAttempt" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+        </actionOr>
+    </rule>
+    <rule id="respond_to_user_Splice_calm_users" comment="respond to user response with splice when they are wrong for more than 3 times">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<gt>
+					<op1 var="currentStepAnswerAttemptCount"  domain="dstate"/>
+					<op2 value="5.0" type="number"/>
+				</gt>
+				<not-equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</not-equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="splice:calm" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="splice:calm" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="playing"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="incorrect-answer-response-calm" comment="respond to user attempt with either performance feedback or empathy feedback">
+    	<precondition>
+    		<and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<not-equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</not-equals>
+			</and>	
+    	</precondition>
+    
+	    	
+    		<action>
+    			<gotoStrategy id="performance_feedback_calm_users"/>
+    		</action>
+ 
+    	
+    </rule>
+    <rule id="pso-last" comment="do nothing">
+        <precondition/>
+        <action/> 
+    </rule>
+    
+</strategy>

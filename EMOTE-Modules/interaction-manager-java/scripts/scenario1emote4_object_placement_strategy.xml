@@ -1,0 +1,623 @@
+<strategy id="object_placement_strategy">
+    <rule id="op_state1" comment="OP state 1: intro">
+        <precondition>
+        	<and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="start"/>
+				</equals>
+				<equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="delivered"/>
+				</equals>
+			</and>
+        </precondition>
+        <actionAnd>
+        	<action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="clueSpeech" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="clueSpeech" />
+	            </assign>
+	            <assign>
+	                <assignee var="clueNumber" domain="output"/>
+					<assigner var="clueNumber" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="presentTask" />
+	            </assign>
+	            <assign>
+	                <assignee var="utterance" domain="output"/>
+					<assigner var="currentStepSpeech" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="learnerName" domain="output"/>
+					<assigner var="learnerName" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepId" domain="output"/>
+					<assigner var="currentStepId" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="opEpisodeState" domain="dstate"/>
+					<assigner value="tech" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="10.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	        </action>
+        </actionAnd>
+        
+    </rule>
+    <rule id="op_state2" comment="OP state 2: Tech">
+        <precondition>
+        	<and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="tech"/>
+				</equals>
+				<equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="delivered"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="objectPlacementTech" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="opEpisodeState" domain="dstate"/>
+				<assigner value="task" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="responseRequired" domain="dstate"/>
+				<assigner value="true" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="playing"/>
+            </assign>
+        </action>
+    </rule>
+    
+    <rule id="op_state3" comment="OP state 3: Task">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="task"/>
+				</equals>
+				<equals>
+					<op1 var="userAffect"  domain="dstate"/>
+					<op2 value="frustrated"/>
+				</equals>
+				<equals>
+					<op1 var="responseRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="fromModule"  domain="dstate"/>
+					<op2 value="user"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="veryPositiveFeedback" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="opEpisodeState" domain="dstate"/>
+				<assigner value="done" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="playing"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="op_state3_2" comment="OP state 3_2: Task">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="task"/>
+				</equals>
+				<equals>
+					<op1 var="responseRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="fromModule"  domain="dstate"/>
+					<op2 value="user"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="positiveFeedback" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="opEpisodeState" domain="dstate"/>
+				<assigner value="done" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="playing"/>
+            </assign>
+        </action>
+    </rule>
+    
+    <rule id="op_state3_3_0" comment="OP state 3_3_0: Task not attempted">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="task"/>
+				</equals>
+				<equals>
+					<op1 var="responseRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<ge>
+	                <op1 var="currentStepTimeOutCount"  domain="dstate"/>
+					<op2 value="3.0" type="number"/>
+	            </ge>
+			</and>
+        </precondition>
+        <actionOr>
+        	<action p="0.2">
+	        	<assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="pump:objectPlacement" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="opEpisodeState" domain="dstate"/>
+					<assigner value="task" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+					<assigner value="0.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	       	</action>
+	        <action p="0.8">
+	        	<assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="focus:objectPlacement" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="opEpisodeState" domain="dstate"/>
+					<assigner value="task" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+					<assigner value="0.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+	       	</action>
+        
+        </actionOr>
+        
+        
+    </rule>
+    	
+    <!-- rule id="op_state3_3_1" comment="OP state 3_3_1: Task failure">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="task"/>
+				</equals>
+				<equals>
+					<op1 var="responseRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="fromModule"  domain="dstate"/>
+					<op2 value="user"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:objectPlacement:rebound"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	            <assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="stalling" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner var="communicativeFunction" domain="output" />
+	            </assign>
+	            <assign>
+	                <assignee var="opEpisodeState" domain="dstate"/>
+					<assigner value="task" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" type="number"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:objectPlacement:rebound" domain="dstate"/>
+					<assigner value="true" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+					<assigner value="0.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="playing"/>
+	            </assign>
+        	</action>
+    </rule -->			
+    
+    <rule id="op_state3_3_2" comment="OP state 3_3_2: Task failure after stalling">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="opEpisodeState"  domain="dstate"/>
+					<op2 value="task"/>
+				</equals>
+				<equals>
+					<op1 var="responseRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="fromModule"  domain="dstate"/>
+					<op2 value="user"/>
+				</equals>
+			</and>
+        </precondition>
+        <actionOr>
+        		<actionAnd p="0.5">
+	           		<action>
+			            <assign>
+			                <assignee var="toModule" domain="output"/>
+							<assigner value="user" />
+			            </assign>
+			            <assign>
+			                <assignee var="communicativeFunction" domain="output"/>
+							<assigner value="rebound" />
+			            </assign>
+			            <assign>
+			                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+							<assigner var="communicativeFunction" domain="output" />
+			            </assign>
+			            <assign>
+			                <assignee var="opEpisodeState" domain="dstate"/>
+							<assigner value="task" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOut" domain="dstate"/>
+							<assigner value="-1.0" type="number"/>
+			            </assign>
+			            <assign>
+			                <assignee var="time-out" domain="output"/>
+							<assigner var="currentStepTimeOut" domain="dstate" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+							<assigner value="0.0" />
+		            	</assign>
+			            <assign>
+			                <assignee var="utteranceStatus"  domain="dstate"/>
+							<assigner value="playing"/>
+			            </assign>
+		        	</action>
+	        	</actionAnd>	
+        		<actionAnd p="0.25">
+	           		<action>
+			            <assign>
+			                <assignee var="toModule" domain="output"/>
+							<assigner value="user" />
+			            </assign>
+			            <assign>
+			                <assignee var="communicativeFunction" domain="output"/>
+							<assigner value="stalling" />
+			            </assign>
+			            <assign>
+			                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+							<assigner var="communicativeFunction" domain="output" />
+			            </assign>
+			            <assign>
+			                <assignee var="opEpisodeState" domain="dstate"/>
+							<assigner value="task" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOut" domain="dstate"/>
+							<assigner value="-1.0" type="number"/>
+			            </assign>
+			            <assign>
+			                <assignee var="time-out" domain="output"/>
+							<assigner var="currentStepTimeOut" domain="dstate" />
+			            </assign>
+			            <assign>
+			                <assignee var="cftried:objectPlacement:rebound" domain="dstate"/>
+							<assigner value="true" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+							<assigner value="0.0" />
+			            </assign>
+			            <assign>
+			                <assignee var="utteranceStatus"  domain="dstate"/>
+							<assigner value="playing"/>
+			            </assign>
+		        	</action>	
+	           		<action>
+			            <assign>
+			                <assignee var="toModule" domain="output"/>
+							<assigner value="user" />
+			            </assign>
+			            <assign>
+			                <assignee var="communicativeFunction" domain="output"/>
+							<assigner value="rebound" />
+			            </assign>
+			            <assign>
+			                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+							<assigner var="communicativeFunction" domain="output" />
+			            </assign>
+			            <assign>
+			                <assignee var="opEpisodeState" domain="dstate"/>
+							<assigner value="task" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOut" domain="dstate"/>
+							<assigner value="-1.0" type="number"/>
+			            </assign>
+			            <assign>
+			                <assignee var="time-out" domain="output"/>
+							<assigner var="currentStepTimeOut" domain="dstate" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+							<assigner value="0.0" />
+		            	</assign>
+			            <assign>
+			                <assignee var="utteranceStatus"  domain="dstate"/>
+							<assigner value="playing"/>
+			            </assign>
+		        	</action>
+	        	</actionAnd>
+	        	<actionAnd p="0.25">
+	        		<action>
+			            <assign>
+			                <assignee var="toModule" domain="output"/>
+							<assigner value="user" />
+			            </assign>
+			            <assign>
+			                <assignee var="communicativeFunction" domain="output"/>
+							<assigner value="stalling" />
+			            </assign>
+			            <assign>
+			                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+							<assigner var="communicativeFunction" domain="output" />
+			            </assign>
+			            <assign>
+			                <assignee var="opEpisodeState" domain="dstate"/>
+							<assigner value="task" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOut" domain="dstate"/>
+							<assigner value="-1.0" type="number"/>
+			            </assign>
+			            <assign>
+			                <assignee var="time-out" domain="output"/>
+							<assigner var="currentStepTimeOut" domain="dstate" />
+			            </assign>
+			            <assign>
+			                <assignee var="cftried:objectPlacement:rebound" domain="dstate"/>
+							<assigner value="true" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+							<assigner value="0.0" />
+			            </assign>
+			            <assign>
+			                <assignee var="utteranceStatus"  domain="dstate"/>
+							<assigner value="playing"/>
+			            </assign>
+		        	</action>	
+	        		<action>
+			            <assign>
+			                <assignee var="toModule" domain="output"/>
+							<assigner value="user" />
+			            </assign>
+			            <assign>
+			                <assignee var="communicativeFunction" domain="output"/>
+							<assigner value="almostFeedback:objectPlacement" />
+			            </assign>
+			            <assign>
+			                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+							<assigner var="communicativeFunction" domain="output" />
+			            </assign>
+			            <assign>
+			                <assignee var="opEpisodeState" domain="dstate"/>
+							<assigner value="task" />
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOut" domain="dstate"/>
+							<assigner value="-1.0" type="number"/>
+			            </assign>
+			            <assign>
+			                <assignee var="currentStepTimeOutCount" domain="dstate"/>
+							<assigner value="0.0" />
+		            	</assign>
+			            <assign>
+			                <assignee var="time-out" domain="output"/>
+							<assigner var="currentStepTimeOut" domain="dstate" />
+			            </assign>
+			            <assign>
+			                <assignee var="utteranceStatus"  domain="dstate"/>
+							<assigner value="playing"/>
+			            </assign>
+			        </action>
+	        	</actionAnd>
+        </actionOr>
+    </rule>
+    
+    <rule id="opir-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

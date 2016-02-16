@@ -1,0 +1,7 @@
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Release\PhysicalSpaceManager.dll
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Release\PhysicalSpaceManager.pdb
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Release\Newtonsoft.Json.dll
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\bin\Release\Newtonsoft.Json.xml
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\obj\Release\PhysicalSpaceManager.csprojResolveAssemblyReference.cache
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\obj\Release\PhysicalSpaceManager.dll
+D:\EMOTE-Modules-WIP\Skene\PhysicalSpaceManager\obj\Release\PhysicalSpaceManager.pdb

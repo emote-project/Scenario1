@@ -1,0 +1,401 @@
+<strategy id="incorrect_sym_strategy_for_others">
+    <rule id="psosym_sym_tool_splice" comment="if user got the symbol tool wrong, we pump:tool">
+        <precondition>
+            <and>
+	            
+				<equals>
+					<op1 var="symToolUsed"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:pump:tool:symbol"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <actionOr>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="tutorial:symbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="tutorial:symbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctTool" domain="output"/>
+					<assigner value="mapKey" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:pump:tool:symbol"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+	        <action>
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="pump:tool" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="pump:tool" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctTool" domain="output"/>
+					<assigner value="mapKey" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:pump:tool:symbol"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+	    </actionOr>
+    </rule>
+    <rule id="psosym_sym_rebound" comment="if he used the symbol tool, we reask the question.">
+        <precondition>
+            <and>
+	           <equals>
+					<op1 var="symbolSkillLevel"  domain="dstate"/>
+					<op2 value="high"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:rebound"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <actionOr>
+	        <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="rebound" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="rebound" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctSymbol" domain="output"/>
+					<assigner var="correctSymbol" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:rebound"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+	        <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="keyword:symbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="keyword:symbol" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctSymbol" domain="output"/>
+					<assigner var="correctSymbol" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:rebound"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	        </action>
+        </actionOr>
+    </rule>
+    <rule id="psosym_sym_focus" comment="if skill level is high, we get them to focus attention">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="symbolSkillLevel"  domain="dstate"/>
+					<op2 value="high"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:rebound"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="focus:symbol" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="focus:symbol" />
+            </assign>
+            <assign>
+                <assignee var="correctSymbol" domain="output"/>
+				<assigner var="correctSymbol" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+            <assign>
+                <assignee var="cftried:focus:symbol"  domain="dstate"/>
+				<assigner value="true"/>
+            </assign>
+        </action>
+    </rule>
+     <rule id="psosym_sym_focus_2" comment="if skill level is low or medium, we try focussing student attention">
+        <precondition>
+            <and>
+	            <or>
+				    <equals>
+						<op1 var="symbolSkillLevel"  domain="dstate"/>
+						<op2 value="low"/>
+					</equals>
+					<equals>
+						<op1 var="symbolSkillLevel"  domain="dstate"/>
+						<op2 value="medium"/>
+					</equals>
+				</or>
+				<equals>
+					<op1 var="cftried:focus:symbol"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="focus:symbol" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="focus:symbol" />
+            </assign>
+            <assign>
+                <assignee var="correctSymbol" domain="output"/>
+				<assigner var="correctSymbol" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+            <assign>
+                <assignee var="cftried:focus:symbol"  domain="dstate"/>
+				<assigner value="true"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psosym_sym_pump">
+        <precondition>
+            <and>
+	           <equals>
+					<op1 var="cftried:focus:symbol"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:pump:symbol"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="pump:symbol" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="pump:symbol" />
+            </assign>
+            <assign>
+                <assignee var="correctSymbol" domain="output"/>
+				<assigner var="correctSymbol" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+            <assign>
+                <assignee var="cftried:pump:symbol"  domain="dstate"/>
+				<assigner value="true"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psosym_sym_hint">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="cftried:pump:symbol"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="hint:symbol" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="hint:symbol" />
+            </assign>
+            <assign>
+                <assignee var="correctSymbol" domain="output"/>
+				<assigner var="correctSymbol" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+            <assign>
+                <assignee var="cftried:hint:symbol"  domain="dstate"/>
+				<assigner value="true"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psosym-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

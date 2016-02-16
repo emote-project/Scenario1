@@ -1,0 +1,138 @@
+<strategy id="incorrect_tool_strategy_for_frustrated_timeout">
+       <rule id="psftool_splice_direction">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="correctTool"  domain="dstate"/>
+					<op2 value="compass"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="elaboration:direction" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="elaboration:direction" />
+            </assign>
+            <assign>
+                <assignee var="correctDirection" domain="output"/>
+				<assigner var="correctDirection" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psftool_splice_distance">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="correctTool"  domain="dstate"/>
+					<op2 value="distance"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="elaboration:distance" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="elaboration:distance" />
+            </assign>
+            <assign>
+                <assignee var="correctDistance" domain="output"/>
+				<assigner var="correctDistance" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psftool_splice_symbol">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="correctTool"  domain="dstate"/>
+					<op2 value="mapKey"/>
+				</equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="elaboration:symbol" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="elaboration:symbol" />
+            </assign>
+            <assign>
+                <assignee var="correctSymbol" domain="output"/>
+				<assigner var="correctSymbol" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="-1.0" />
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="taskStatus" domain="dstate" />
+                <assigner value="ongoing" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="sent-to-tts"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="psftool-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

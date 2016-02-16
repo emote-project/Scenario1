@@ -1,0 +1,117 @@
+<strategy id="social_bonding_strategy">
+    <rule id="user_bored1" comment="User is bored, so we tell him a joke and reengage">
+	        <precondition>
+	            <and>
+		            <equals>
+						<op1 var="activityEnded"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+					<equals>
+						<op1 var="cftried:tellAJoke"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+		        </and>
+			</precondition>
+	        <actionOr>
+		        <action p="0.5">
+		             <assign>
+		                <assignee var="toModule" domain="output"/>
+						<assigner value="user" />
+		            </assign>
+		         	<assign>
+		                <assignee var="communicativeFunction" domain="output"/>
+						<assigner value="tellAJoke" />
+		            </assign>
+		            <assign>
+		                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+						<assigner value="tellAJoke" />
+		            </assign>
+		            <assign>
+		                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+						<assigner value="tellAJoke" />
+		            </assign>
+		            <assign>
+		                <assignee var="cftried:tellAJoke" domain="dstate"/>
+						<assigner value="true" />
+		            </assign>
+		            <assign>
+		                <assignee var="time-out" domain="output"/>
+						<assigner value="-1" />
+		            </assign>
+		        </action>
+		        <action p="0.5">
+		            <assign>
+		                <assignee var="toModule" domain="output"/>
+						<assigner value="user" />
+		            </assign>
+		         	<assign>
+		                <assignee var="communicativeFunction" domain="output"/>
+						<assigner value="smallTalk" />
+		            </assign>
+		            <assign>
+		                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+						<assigner value="smallTalk" />
+		            </assign>
+		            <assign>
+		                <assignee var="time-out" domain="output"/>
+						<assigner value="-1" />
+		            </assign>
+		        </action>
+		   </actionOr>
+	</rule>
+	<rule id="user_bored2" comment="User is bored but task ongoing, so we requestion him">
+	        <precondition>
+	            <and>
+		            <equals>
+						<op1 var="activityEnded"  domain="dstate"/>
+						<op2 value="false"/>
+					</equals>
+					<equals>
+						<op1 var="taskStatus"  domain="dstate"/>
+						<op2 value="ongoing"/>
+					</equals>
+		        </and>
+			</precondition>
+	        <actionOr>
+		        <action>
+		             <assign>
+		                <assignee var="toModule" domain="output"/>
+						<assigner value="user" />
+		            </assign>
+		         	<assign>
+		                <assignee var="communicativeFunction" domain="output"/>
+						<assigner value="requestion:distanceDirectionSymbol" />
+		            </assign>
+		            <assign>
+		                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+						<assigner var="communicativeFunction" domain="output" />
+		            </assign>
+		            <assign>
+		                <assignee var="correctDirection" domain="output"/>
+						<assigner var="correctDirection" domain="dstate" />
+		            </assign>
+		            <assign>
+		                <assignee var="correctDistance" domain="output"/>
+						<assigner var="correctDistance" domain="dstate" />
+		            </assign>
+		            <assign>
+		                <assignee var="correctSymbol" domain="output"/>
+						<assigner var="correctSymbol" domain="dstate" />
+		            </assign>
+		            <assign>
+		                <assignee var="time-out" domain="output"/>
+						<assigner value="-1" />
+		            </assign>
+		        </action>
+		       
+		   </actionOr>
+	</rule>
+    <rule id="sb-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

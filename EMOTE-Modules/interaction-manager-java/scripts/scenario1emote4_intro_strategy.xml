@@ -1,0 +1,237 @@
+<strategy id="intro_strategy">
+    <rule id="intro_state1" comment="Intro state 1: greet user">
+        <precondition>
+            <equals>
+				<op1 var="introEpisodeState"  domain="dstate"/>
+				<op2 value="greet"/>
+			</equals>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="greetUser" />
+            </assign>
+            <assign>
+                <assignee var="learnerName" domain="output"/>
+				<assigner var="learnerName" domain="dstate" />
+            </assign>
+           <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="introEpisodeState" domain="dstate"/>
+				<assigner value="recap" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus" domain="dstate" />
+                <assigner value="sent-to-tts" />
+            </assign>
+        </action>
+    </rule>
+    <rule id="intro_state2" comment="Intro state 2: RECAP">
+        <precondition>
+        	<and>
+	            <equals>
+					<op1 var="introEpisodeState"  domain="dstate"/>
+					<op2 value="recap"/>
+				</equals>
+				<equals>
+					<op1 var="notFirstSession"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="recap" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="skill" domain="output"/>
+				<assigner var="lastSessionSkill" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="introEpisodeState" domain="dstate"/>
+				<assigner value="taskIntro" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus" domain="dstate" />
+                <assigner value="sent-to-tts" />
+            </assign>
+        </action>
+    </rule>
+    <rule id="intro_state3" comment="Intro state 3: taskIntro for subsequent sessions (not 1st)">
+        <precondition>
+        	<and>
+        	    <or>
+		            <equals>
+						<op1 var="introEpisodeState"  domain="dstate"/>
+						<op2 value="taskIntro"/>
+					</equals>
+					<equals>
+						<op1 var="introEpisodeState"  domain="dstate"/>
+						<op2 value="recap"/>
+					</equals>
+				</or>
+				<equals>
+					<op1 var="notFirstSession"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="taskIntro" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="introEpisodeState" domain="dstate"/>
+				<assigner value="askReady" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus" domain="dstate" />
+                <assigner value="sent-to-tts" />
+            </assign>
+        </action>
+    </rule>
+    <rule id="intro_state3_1" comment="Intro state 3_1: taskIntro for first session">
+        <precondition>
+        	<and>
+	            <or>
+		            <equals>
+						<op1 var="introEpisodeState"  domain="dstate"/>
+						<op2 value="taskIntro"/>
+					</equals>
+					<equals>
+						<op1 var="introEpisodeState"  domain="dstate"/>
+						<op2 value="recap"/>
+					</equals>
+				</or>
+				<equals>
+					<op1 var="notFirstSession"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="taskIntro:first" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="introEpisodeState" domain="dstate"/>
+				<assigner value="askReady" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus" domain="dstate" />
+                <assigner value="sent-to-tts" />
+            </assign>
+        </action>
+    </rule>
+    
+    <rule id="intro_state4" comment="Intro state 4: askReady">
+        <precondition>
+            <equals>
+				<op1 var="introEpisodeState"  domain="dstate"/>
+				<op2 value="askReady"/>
+			</equals>
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+            <assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="askReady" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner var="communicativeFunction" domain="output" />
+            </assign>
+            <assign>
+                <assignee var="introEpisodeState" domain="dstate"/>
+				<assigner value="done" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus" domain="dstate" />
+                <assigner value="sent-to-tts" />
+            </assign>
+        </action>
+    </rule>
+    
+     
+    <rule id="air-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

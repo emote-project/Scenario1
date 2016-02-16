@@ -1,0 +1,155 @@
+<strategy id="pedagogical_strategy_for_frustrated_timeout">
+    <rule id="incorrect_tool_frustrated_timeout" comment="when user got the tool wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="toolSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="toolCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_tool_strategy_for_frustrated_timeout"/>
+		</action>            
+    </rule>
+     <rule id="splice_frustrated_users_if_too_many_timeouts" comment="respond to user response with splice when they are wrong for more than 2 times">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<gt>
+					<op1 var="globalStepTimeOutCount"  domain="dstate"/>
+					<op2 value="15.0" type="number"/>
+				</gt>
+				<not-equals>
+					<op1 var="utteranceStatus"  domain="dstate"/>
+					<op2 value="playing"/>
+				</not-equals>
+			</and>				
+        </precondition>
+        <action>
+            <assign>
+                <assignee var="toModule" domain="output"/>
+				<assigner value="user" />
+            </assign>
+         	<assign>
+                <assignee var="communicativeFunction" domain="output"/>
+				<assigner value="splice" />
+            </assign>
+            <assign>
+                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+				<assigner value="splice" />
+            </assign>
+            <assign>
+                <assignee var="currentStepTimeOut" domain="dstate"/>
+				<assigner value="10.0" type="number"/>
+            </assign>
+            <assign>
+                <assignee var="time-out" domain="output"/>
+				<assigner var="currentStepTimeOut" domain="dstate" />
+            </assign>
+            <assign>
+                <assignee var="utteranceStatus"  domain="dstate"/>
+				<assigner value="playing"/>
+            </assign>
+        </action>
+    </rule>
+    <rule id="incorrect_sym_frustrated_timeout" comment="when user got the sym wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="symbolSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="symbolCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_sym_strategy_for_frustrated_timeout"/>
+		</action>            
+    </rule>
+	<rule id="incorrect_dir_frustrated_timeout" comment="when user got the dir wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="directionSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="directionCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_dir_strategy_for_frustrated_timeout"/>
+		</action>            
+    </rule>
+    <rule id="incorrect_dis_frustrated_timeout" comment="when user got the dis wrong">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="taskStatus"  domain="dstate"/>
+					<op2 value="ongoing"/>
+				</equals>
+				<equals>
+					<op1 var="responseCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="distanceSkillRequired"  domain="dstate"/>
+					<op2 value="true"/>
+				</equals>
+				<equals>
+					<op1 var="distanceCorrect"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+		<action>
+		    <gotoStrategy id="incorrect_dis_strategy_for_frustrated_timeout"/>
+		</action>            
+    </rule>
+    
+    <rule id="psft-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>

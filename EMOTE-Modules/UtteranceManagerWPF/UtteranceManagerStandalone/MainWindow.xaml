@@ -1,0 +1,11 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:UtteranceManagerControl="clr-namespace:UtteranceManagerControl;assembly=UtteranceManagerControl" x:Class="UtteranceManagerClient.MainWindow"
+        Title="MainWindow" Height="578" Width="848">
+    <Grid>
+
+        <UtteranceManagerControl:EMOTEUtterancesManager x:Name="uttManager" Margin="10" Width="Auto" Height="Auto" Loaded="uttManager_Loaded"/>
+
+    </Grid>
+</Window>

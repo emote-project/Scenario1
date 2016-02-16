@@ -1,0 +1,171 @@
+<strategy id="incorrect_dis_strategy_for_frustrated_timeout">
+    <rule id="psftdis_dis_tool_splice">
+        <precondition>
+            <and>
+	            <equals>
+					<op1 var="disToolUsed"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+				<equals>
+					<op1 var="cftried:elaboration:distance"  domain="dstate"/>
+					<op2 value="false"/>
+				</equals>
+			</and>				
+        </precondition>
+        <actionOr>
+            <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="elaboration:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="elaboration:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctdistance" domain="output"/>
+					<assigner var="correctdistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:elaboration:distance"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	        </action>
+	        <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="focus:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="focus:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctdistance" domain="output"/>
+					<assigner var="correctdistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="cftried:elaboration:distance"  domain="dstate"/>
+					<assigner value="true"/>
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	        </action>
+        </actionOr>
+    </rule>
+    <rule id="psftdis_dis_hint">
+        <precondition/>
+        <actionOr>
+	        <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="hint:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="hint:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctdistance" domain="output"/>
+					<assigner var="correctdistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	        </action>
+	         <action p="0.5">
+	            <assign>
+	                <assignee var="toModule" domain="output"/>
+					<assigner value="user" />
+	            </assign>
+	         	<assign>
+	                <assignee var="communicativeFunction" domain="output"/>
+					<assigner value="keyword:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="systemCommunicativeFunction" domain="dstate"/>
+					<assigner value="keyword:distance" />
+	            </assign>
+	            <assign>
+	                <assignee var="correctdistance" domain="output"/>
+					<assigner var="correctdistance" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="currentStepTimeOut" domain="dstate"/>
+					<assigner value="-1.0" />
+	            </assign>
+	            <assign>
+	                <assignee var="time-out" domain="output"/>
+					<assigner var="currentStepTimeOut" domain="dstate" />
+	            </assign>
+	            <assign>
+	                <assignee var="taskStatus" domain="dstate" />
+	                <assigner value="ongoing" />
+	            </assign>
+	            <assign>
+	                <assignee var="utteranceStatus"  domain="dstate"/>
+					<assigner value="sent-to-tts"/>
+	            </assign>
+	        </action>
+        </actionOr>
+    </rule>
+    <rule id="psftdis-last" comment="do nothing">
+        <precondition/>
+        <action/>
+    </rule>
+</strategy>
