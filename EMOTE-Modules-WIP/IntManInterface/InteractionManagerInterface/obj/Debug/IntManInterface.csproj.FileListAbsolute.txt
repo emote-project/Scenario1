@@ -1,2 +1,0 @@
-D:\EMOTE-Modules-WIP\IntManInterface\InteractionManagerInterface\bin\Debug\IntManInterface.exe.config
-D:\EMOTE-Modules-WIP\IntManInterface\InteractionManagerInterface\obj\Debug\IntManInterface.csprojResolveAssemblyReference.cache

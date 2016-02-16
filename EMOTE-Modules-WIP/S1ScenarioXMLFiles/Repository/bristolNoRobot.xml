@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scenario compass-tutorial="false" map-key-tutorial="false" distance-tutorial="false"><name>bristolNoRobot</name><activities xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" compass-button="false" update-button-visibility="false" instructions-button="false" distance-button="false" map-key-button="false" id="0" skip-button="false" scrap-book-button="false" help-button="false" loop-steps="false" xsi:type="java:uk.co.namshub.Activity"/></scenario>
