@@ -1,0 +1,75 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="WOZInterface.MainWindow"
+        xmlns:UserControl="clr-namespace:WOZInterface"
+        Title="WOZ Interface (stopped)" Height="1080" Width="1920" Closing="Window_Closing" WindowStyle="None" WindowState="Maximized" Initialized="Window_Initialized" Background="#FF2C2C2C">
+    <Grid HorizontalAlignment="Center" Width="1844" Margin="34,35,34,32">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+
+        <!--<Grid x:Name="FreeSpeech" Margin="1016,0,10,948">
+            <Rectangle x:Name="FreeSpeechBox" Fill="#FF343434" HorizontalAlignment="Left" Height="50" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="818"/>
+            <Grid x:Name="FreeSpeechHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="50" Width="818"  />
+        </Grid>-->
+
+        <Grid x:Name="UtteranceControlArea" Margin="994,0,0,0" >
+            <Rectangle x:Name="UtteranceControlBox" Fill="#FF343434" HorizontalAlignment="Left" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Height="1000" Width="850" />
+            <Grid x:Name="UtteranceControlHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="1000" Width="850"  />
+        </Grid>
+
+        <!--<Grid x:Name="UtteranceSelector" Margin="1016,63,10,442">
+            <Rectangle x:Name="UtteranceSelectorBox" Fill="#FF343434" HorizontalAlignment="Left" Height="500" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="818"/>
+            <Grid x:Name="UtteranceSelectorHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="500" Width="818" />
+        </Grid>-->
+
+
+        <Grid x:Name="ControlPanel" Margin="10,769,1583,7" >
+            <Rectangle x:Name="ControlPanelBox" Fill="#FF343434" HorizontalAlignment="Left" Height="230"  Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="250" Margin="0,0,0,-1" />
+            <Grid x:Name="ControlPanelHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="230" Width="250"  />
+        </Grid>
+
+
+        <Grid x:Name="TaskScript" Margin="672,0,872,0" Height="974" VerticalAlignment="Top">
+            <Rectangle x:Name="TaskScriptBox" Fill="#FF343434" HorizontalAlignment="Left" Height="1000" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="300" Margin="0,0,0,-26"/>
+            <Grid x:Name="TaskScriptHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="974" Width="300" />
+        </Grid>
+
+        <Rectangle x:Name="CameraViewsBox" Fill="#FF343434" HorizontalAlignment="Left" Height="720" Margin="10,44,0,0" Stroke="#FF232323" VerticalAlignment="Top" Width="640" StrokeThickness="2" d:IsLocked="True"/>
+
+        <Grid HorizontalAlignment="Left" Height="230" Margin="290,769,0,0" VerticalAlignment="Top" Width="360">
+            <Rectangle x:Name="CompetenceBox" Fill="#FF343434" HorizontalAlignment="Left" Height="230" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="360"/>
+            <Grid x:Name="CompetenceBoxHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="230" Width="360" />
+
+            <!--<UserControl:Competence Width="360" Height="230" VerticalAlignment="Top"/>-->
+        </Grid>
+
+        <!--<Grid HorizontalAlignment="Left" Height="300" Margin="348,759,0,0" VerticalAlignment="Top" Width="300">
+            <UserControl:GazeControl Width="300" Height="300" VerticalAlignment="Top"/>
+        </Grid>-->
+
+
+
+        <Grid x:Name="CameraHolder1" Height="240" Width="320" Margin="10,53,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Grid x:Name="CameraHolder2" Height="240" Width="320" Margin="330,53,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        <Grid x:Name="CameraHolder3" Width="640" Margin="10,307,0,0" HorizontalAlignment="Left" Height="446" VerticalAlignment="Top" />
+        <Button x:Name="Exit" Content="X" Margin="0,-29,-26,0" VerticalAlignment="Top" Click="Button_Click" Height="25" Background="#FF343434" Foreground="Red" BorderBrush="#FFACACAC" FontWeight="Bold" HorizontalAlignment="Right" Width="22"/>
+
+        <!--<Grid x:Name="GazePointControl" Width="300" Margin="679,18,865,639" >
+            <Rectangle x:Name="GazePointBox" Fill="#FF343434" HorizontalAlignment="Left" Height="350" Stroke="White" StrokeThickness="2" VerticalAlignment="Top" Width="300" Margin="0,0,0,-2" />
+            <Grid x:Name="GazePointHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="350" Width="300" />
+        </Grid>-->
+
+        <!--<Grid x:Name="FeedbackControl" Width="818" Margin="1016,570,10,2" >
+            <Rectangle x:Name="FeedbackBox" Fill="#FF343434" HorizontalAlignment="Left" Height="430" Stroke="#FF232323" StrokeThickness="2" VerticalAlignment="Top" Width="818" Margin="0,0,0,-28" />
+            <Grid x:Name="FeedbackHolder" HorizontalAlignment="Left" VerticalAlignment="Top" Height="430" Width="818" />
+        </Grid>-->
+        <Label x:Name="question"  Content="--------------------------------------" HorizontalContentAlignment="Center"  FontSize="14" FontWeight="Bold" HorizontalAlignment="Left" Height="39" Margin="10,0,0,0" VerticalAlignment="Top" Width="640" Foreground="White" Background="#FF343434" BorderBrush="#FF232323"  BorderThickness="2"/>
+
+
+
+
+    </Grid>
+</Window>
